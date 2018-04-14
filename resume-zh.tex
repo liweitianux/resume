@@ -1,0 +1,344 @@
+%%
+%% Copyright (c) 2018 Weitian LI
+%%
+%% Resume / Résumé
+%% A short document (1-2 pages) to sum up the job-related accomplishments
+%% and experience.
+%%
+%% Information Checklist:
+%% * Contact Information
+%% * Work History / Experience
+%% * Education
+%% * Skills
+%% * Summary & Objective (optional)
+%% * Hobbies & Interests (optional)
+%%
+%% References:
+%% * CV vs. Resume: What is the Difference? When to Use Which?
+%%   https://uptowork.com/blog/cv-vs-resume-difference
+%% * How to Make a Resume: A Step-by-Step Guide (+30 Examples)
+%%   https://uptowork.com/blog/how-to-make-a-resume
+%% * Entry-Level Resume: Sample and Complete Guide (+20 Examples)
+%%   https://uptowork.com/blog/entry-level-resume-example
+%%
+%% Weitian LI <liweitianux@live.com>
+%% 2018-04-11
+%%
+
+\documentclass[zh]{resume}
+
+% File information shown at the footer of the last page
+\fileinfo{%
+  \faCopyright{} 2018 Weitian LI,
+  \creativecommons{by}{4.0}, v\today
+}
+
+% position and place
+\newcommand{\myposition}{数据分析师}
+\newcommand{\myplace}{深圳}
+
+\name{维天}{李}
+\tagline{\myposition{} @ \myplace}
+\taglineicon{\faBinoculars}
+\keywords{\myposition, \myplace, Python, Linux, BSD}
+\photo{3cm}{photo}
+
+\socialinfo{
+  \mobile{132-6262-0332}
+  \email{liweitianux@live.com}
+  \github{liweitianux} \\
+  \university{上海交通大学}
+  \degree{物理学 \textbullet 博士（在读）} \\
+  \address{上海}
+  \home{湖南 \textbullet 邵阳}
+  \birthday{1991-09-26}
+}
+
+\begin{document}
+\makeheader
+
+%======================================================================
+% Summary & Objectives
+%======================================================================
+{\onehalfspacing\hspace{1.7em}
+物理学专业直博 5 年级研究生，预计 2019 年初毕业，扎实的物理、数学与统计学
+基础，熟悉信号与图像处理、传统机器学习与深度神经网络的基本方法。
+热衷计算机和网络技术，有长达 10 年的 Linux 和 BSD 使用经验。
+热爱自由开源精神，并积极参与 DragonFly BSD 等多个开源项目。
+拥有计算机专长，能熟练使用 Python 和 R 语言，对数据分析有强烈兴趣。
+真诚应聘\emph{\myposition}职位。
+\par}  % NOTE: \par is needed
+
+%======================================================================
+% competences / skills
+\sectionTitle{技能}{\faWrench}
+%======================================================================
+\begin{competences}
+  \comptence{操作系统}%
+    {Linux（10 年）, BSD（DragonFly BSD 和 FreeBSD；7 年）}
+  \comptence{编程}%
+    {Python, Shell, C, R; Julia}
+  \comptence{数据分析}%
+    {R, pandas, scikit-learn; matplotlib, ggplot2}
+  \comptence{工具}%
+    {正则表达式; Jupyter Notebook; SSH, Git, Make; Ansible}
+  \comptence{网站开发}%
+    {Django, Tornado; jQuery, Bootstrap; JavaScript, HTML5}
+  \comptence{排版}%
+    {\LaTeX, Con\TeX{}t}
+\end{competences}
+
+%======================================================================
+% Education
+\sectionTitle{教育背景}{\faGraduationCap}
+%======================================================================
+
+\begin{educations}
+  \education%
+    {2013.09}%
+    {现在}%
+    {上海交通大学}%
+    {物理与天文学院}%
+    {物理学}%
+    {博士（在读，预计 2019 年初毕业）}
+
+  \separator{0.7em}
+  \education%
+    {2009.09}%
+    {2013.06}%
+    {上海交通大学}%
+    {物理与天文系}%
+    {应用物理学}%
+    {学士学位}
+\end{educations}
+
+%======================================================================
+% Research Projects
+\sectionTitle{科研项目}{\faCogs}
+%======================================================================
+\begin{projects}
+  \project
+    {2015.01}%
+    {现在}%
+    {国家自然科学基金委}%
+    {重点项目}%
+    {低频射电天空的高精度仿真与微弱天体辐射信号的识别}%
+    {\begin{itemize}
+      \item 使用 Python 开发低频射电天文模拟软件 \texttt{FG21sim}
+            （开源在 \link{https://github.com/liweitianux/fg21sim}{GitHub}）
+      \item 显著改进星系团射电晕的建模，并考虑低频干涉阵列的实际观测效应
+      \item 量化评估射电晕对探测宇宙再电离信号的影响，并完成期刊论文
+      \item 合作利用深度卷积神经网络对 FIRST 巡天的射电星系图像做形态分类
+      \item 使用独立成分分析（ICA）、形态学成分分析（MCA）等算法，尝试
+            分离与扣除宇宙再电离探测任务中的强烈前景干扰
+      \item 利用 k-Means、小波分析等算法，对 X 射线天文图像进行去噪与增强
+      \item 提取 X 射线天文图像的空间和光谱信息，利用支持向量机（SVM）
+            进行分类，探测点源
+    \end{itemize}}%
+    [Python, 机器学习, CNN, SVM, k-Means, 小波分析, 图像处理, 信号分离]
+
+  \separator{1em}
+  \project
+    {2012.07}%
+    {2014.12}%
+    {国家自然科学基金委}%
+    {杰出青年基金}%
+    {星系和星系团的 X 射线研究、宇宙低频射电辐射研究}%
+    {\begin{itemize}
+      \item 处理 200 多个 \textit{Chandra} X 射线卫星观测的星系团数据，
+            分析其图像与光谱
+      \item 筛选并构建样本，搜集 SDSS 光学波段数据，研究星系团中央辐射
+            超出与其中央主导星系之间的关联
+      \item 编写并维护一套数据处理程序 \texttt{chandra-acis-analysis}
+            （开源在 \link{https://github.com/liweitianux/chandra-acis-analysis}{GitHub}）
+    \end{itemize}}%
+    [Python, Shell, 数据搜集, 数据处理, 统计分析]
+\end{projects}
+
+%======================================================================
+% Experience
+\sectionTitle{经验}{\faBriefcase}
+%======================================================================
+\begin{experiences}
+  \experience
+    {2018.04}%
+    {参加第二届中澳 SKA 大数据工作研讨会}%
+    [\begin{itemize}
+      \item 实现数据存储系统 NGAS 与数据处理系统 DALiuGE 之间的数据传输功能
+      \item 学习团队协作和敏捷开发模式
+    \end{itemize}]%
+    [数据传输, 数据存储, 敏捷开发, Python]
+
+  \separator{0.5em}
+  \experience
+    {2018.03}%
+    {成为 DragonFly BSD 开发者}%
+    [][BSD, 开源]
+
+  \separator{0.5em}
+  \experience
+    {2018.03}%
+    {迁移 VPS 至 Vultr，使用 Ansible 管理配置，并自行托管 DNS 服务}%
+    [][BSD, Ansible, NSD, Unbound]
+
+  \separator{0.5em}
+  \experience
+    {2018.02}%
+    {修订中国 SKA 科学白皮书，负责重写\enquote{低频观测设备}章节}
+
+  \separator{0.5em}
+  \experience
+    {2017.12}%
+    {参与配置和测试上海天文台的高性能计算集群原型机（6 节点）}
+
+  \separator{0.5em}
+  \experience
+    {2017.09}%
+    {撰写中国 SKA 科学白皮书，协助导师完成\enquote{前景大尺度弥散源}章节}
+
+  \separator{0.5em}
+  \experience
+    [2017.04]%
+    {2017.08}%
+    {肺部 CT 扫描图像分析}%
+    [\begin{itemize}
+      \item 与上海胸科医院合作，尝试通过分析 CT 图像判断肿瘤突变类型，
+            帮助医生制订治疗计划
+      \item 使用灰度共生矩阵（GLCM）提取图像特征，再用主成分分析（PCA）
+            降维，发现目前的数据质量不足以直接从 CT 图像有效地判断出肿瘤
+            的突变类型
+    \end{itemize}]%
+    [特征提取, 数据降维, PCA]
+
+  \separator{0.5em}
+  \experience
+    {2017.04}%
+    {配置 VPS，运行 DragonFly BSD 系统，部署个人域名邮箱、网站、
+      CalDAV/CardDAV、Git 等服务}%
+    [][BSD, Postfix, Dovecot, Nginx, Radicale, Git]
+
+  \separator{0.5em}
+  \experience
+    {2016.12}%
+    {搭建和管理课题组的计算机集群（4 节点）}%
+    [][CentOS, NFS, Slurm, OpenMPI]
+
+  \separator{0.5em}
+  \experience
+    {2016.11}%
+    {参加 BSD Meetup: BSD \& Cloud 聚会 @ 上海}%
+    [][BSD, 开源]
+
+  \separator{0.5em}
+  \experience
+    {2016.09}%
+    {参加第十三届全国研究生数学建模竞赛}%
+    [\begin{itemize}
+      \item 利用全基因组的方法定位与性状或疾病相关联的位点或基因
+      \item 使用 R 语言对样本中的位点编码与性状做 Logistic 回归分析，
+            挑选出与该性状最相关的若干位点，并进一步确定相关系的基因
+    \end{itemize}]%
+    [R, 回归分析, 假设检验]
+
+  \separator{0.5em}
+  \experience
+    {2016.07}%
+    {负责科技部 973 子课题\enquote{SKA 科学目标预研究}的财务审计与结题验收工作}
+
+  \separator{0.5em}
+  \experience
+    [2014.04]%
+    {2014.07}%
+    {筹办第二届中国 SKA 暑期学校}%
+    [\begin{itemize}
+      \item 设计并制作宣传海报
+      \item 设计并开发网站，使用 Django 和 Bootstrap，提供用户注册和登录、
+            信息和讲义发布等功能
+    \end{itemize}]%
+    [设计, Django, Bootstrap, jQuery, JavaScript, MySQL]
+
+  \separator{0.5em}
+  \experience
+    {2013.09}%
+    {负责科技部 973 课题\enquote{低频射电技术与应用}的财务审计工作}
+
+  \separator{0.5em}
+  \experience
+    [2013.07]%
+    {2013.09}%
+    {暑期实习 @ 97 随访}%
+    [\begin{itemize}
+      \item 开发网站，用于帮助乙肝患者记录和跟踪化验报告中的各项指标
+      \item 使用 Django 开发网站后端，实现用户注册与登录、数据存储和搜索等功能
+      \item 使用 AJAX 技术实现前端与后端的交互，对患者各项指标作图可视化
+    \end{itemize}]%
+    [Django, 数据库, 数据可视化, AJAX]
+
+  \separator{0.5em}
+  \experience
+    [2010.03]%
+    {2011.09}%
+    {参与学校开源协会}%
+    [][开源, Linux]
+\end{experiences}
+
+%======================================================================
+% Languages
+\sectionTitle{语言}{\faLanguage}
+%======================================================================
+\begin{entries}[|]
+  \entry{\textbf{汉语}}{%
+    \begin{description}
+      \item[写作] 良好（参与撰写项目申请、年度总结、技术报告等；
+        撰写与修订\enquote{中国 SKA 科学白皮书}章节）
+      \item[表达] 良好（多次助教习题课与答疑；学术报告与讨论）
+    \end{description}
+  }
+
+  \separator{0.7em}
+  \entry{\textbf{英语}}{%
+    \begin{description}
+      \item[阅读] 良好（顺利阅读软件文档和专业文献）
+      \item[写作] 良好（撰写学术论文）
+      \item[听说] 日常交流
+    \end{description}
+  }
+\end{entries}
+
+%======================================================================
+% Teaching Assistant
+\sectionTitle{助教}{\faUsers}
+%======================================================================
+\begin{entries}
+  \entry{2017 年春季}%
+    {宇宙与人类（通识课）}
+  \entry{2015 年秋季}%
+    {物理学引论 II （致远荣誉计划）}
+  \entry{2015 年春季}%
+    {物理学引论 I （致远荣誉计划）}
+  \entry{2014 年秋季}%
+    {物理学引论 I （致远荣誉计划）}
+  \entry{2014 年春季}%
+    {大学物理（获优秀助教）}
+\end{entries}
+
+%======================================================================
+% Awards / Scholarships / Certificates
+\sectionTitle{获奖及证书}{\faTrophy}
+%======================================================================
+\begin{entries}
+  \entry{2016.09}%
+    {第十三届全国研究生数学建模竞赛 \textbullet 成功参与奖}
+  \entry{2013.11}%
+    {上海交通大学优秀博士新生奖学金}
+  \entry{2012.10}%
+    {上海交通大学先进个人}
+  \entry{2011.12}%
+    {国家天文台奖学金}
+  \entry{2011.09}%
+    {全国计算机等级考试 \textbullet 四级网络工程师}
+\end{entries}
+
+\end{document}
+
+%% EOF
