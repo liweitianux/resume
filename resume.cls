@@ -1,6 +1,7 @@
 %%
 %% Copyright (c) 2018 Weitian LI
 %% Copyright (c) 2016 Christophe Roger
+%% The LaTeX Project Public License (LPPL) Version 1.3c
 %%
 %% Resume LaTeX template.
 %% Based on

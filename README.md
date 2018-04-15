@@ -18,7 +18,7 @@ by Alessandro Plasmati.
 
 License
 -------
-* LaTeX class `resume.cls` is published under the term of the
-  [LPPL Version 1.3c](https://www.latex-project.org/lppl.txt).
-* All content files are published under the term of the
+* The LaTeX class and style files are published under the
+  [LaTeX Project Public License (LPPL) Version 1.3c](https://www.latex-project.org/lppl.txt).
+* All content files are published under the
   [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
