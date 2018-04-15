@@ -35,17 +35,21 @@
 \RequirePackage{fullpage}
 \RequirePackage[margin=1.5cm]{geometry}
 \RequirePackage{titlesec}
+\RequirePackage{enumitem}
 \RequirePackage{setspace}
 \RequirePackage{array}
-\RequirePackage{enumitem}
+\RequirePackage{multirow}
+\RequirePackage{makecell}  % multirowcell
 \RequirePackage{longtable}
 \RequirePackage[usenames,dvipsnames]{xcolor}
 \RequirePackage[skins]{tcolorbox}
 \RequirePackage{tikz}
-\RequirePackage{xeCJK}
 \RequirePackage{ulem}
-\RequirePackage{CJKulem}
-\RequirePackage{csquotes}
+%\ifdef{\@zh}{
+  \RequirePackage{xeCJK}
+  \RequirePackage{CJKulem}
+  \RequirePackage{csquotes}
+%}{}
 
 %
 % Hyperref
@@ -86,10 +90,12 @@
 \setmonofont{M+ 1mn}
 
 % Chinese setup
-\xeCJKsetup{PunctStyle=hangmobanjiao}
-\setCJKmainfont{Noto Serif CJK SC}[BoldFont=Noto Sans CJK SC]
-\setCJKsansfont{Noto Sans CJK SC}
-\setCJKmonofont{Noto Sans Mono CJK SC}
+%\ifdef{\@zh}{
+  \xeCJKsetup{PunctStyle=hangmobanjiao}
+  \setCJKmainfont{Noto Serif CJK SC}[BoldFont=Noto Sans CJK SC]
+  \setCJKsansfont{Noto Sans CJK SC}
+  \setCJKmonofont{Noto Sans Mono CJK SC}
+%}{}
 
 % Color setup
 \ifdef{\@monochrome}%
@@ -131,12 +137,15 @@
 }
 \AtEndDocument{\thispagestyle{lastpage}}
 
+% No paragraph indentation
+\setlength{\parindent}{0em}
+
 % Line spacing
 \linespread{1.1}
 
 % Setup resume sections
 \titleformat{\section}{\Large\raggedright}{}{0.2em}{}[\titlerule]
-\titlespacing{\section}{0em}{0.2em}{0.2em}
+\titlespacing{\section}{0em}{0.1em}{0.1em}
 
 % Configure list via 'enumitem'
 \setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=2em}
@@ -144,8 +153,12 @@
 
 % New length definition
 \newlength{\leftcolwidth}
-\setlength{\leftcolwidth}{6em}
 \newlength{\rightcolwidth}
+\ifdef{\@zh}{%
+  \setlength{\leftcolwidth}{6em}
+}{
+  \setlength{\leftcolwidth}{7.5em}
+}
 \setlength{\rightcolwidth}{\dimexpr \textwidth - \leftcolwidth - 4\tabcolsep}
 
 %%
@@ -163,7 +176,7 @@
 % Render an icon
 \newcommand*{\icon}[1]{%
   \makebox[1em][c]{\textcolor{symbolcolor}{#1}}%
-  \hspace{0.5em}%
+  \hspace{0.2em}%
 }
 
 % Test whether the command argument is given and is not empty
@@ -289,7 +302,6 @@
   }{%
     \begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}
   }
-    \onehalfspacing
     \user{\@firstname}{\@lastname}
     \smallskip \\
     \ifdef{\@taglineicon}{%
@@ -300,7 +312,7 @@
     \smallskip \\
     \@socialinfo
   \end{minipage}
-  \bigskip
+  \smallskip
 }
 
 %%
@@ -371,14 +383,19 @@
 
 % \education
 %   {<start-date>}  % #1
-%   {<end-date>}    % #2
+%   [<end-date>]    % #2
 %   {<school>}      % #3
 %   {<department>}  % #4
 %   {<major>}       % #5
 %   {<degree>}      % #6
-\NewDocumentCommand{\education}{m m m m m m}{
-  #2 & \textbf{#3} \textbullet #4 \\*
-  #1 & #5 \textbullet #6 \\
+\NewDocumentCommand{\education}{m o m m m m}{
+  \ifdef{\@zh}{%
+    \IfValueTF{#2}{#2}{现在} & \textbf{#3} \textbullet #4 \\*
+    #1 & #5 \textbullet #6 \\
+  }{%
+    \IfValueTF{#2}{#2}{present} & #4, \textbf{#3} \\*
+    #1 & #6 in #5 \\
+  }
 }
 
 %%
@@ -393,18 +410,23 @@
 
 % \project
 %   {<start-date>}   % #1
-%   {<end-date>}     % #2
+%   [<end-date>]     % #2
 %   {<department>}   % #3
 %   {<type>}         % #4
 %   {<name>}         % #5
 %   {<description>}  % #6
 %   [<tags>]         % #7
-\NewDocumentCommand{\project}{m m m m m m o}{
-  #2 & \textbf{#5} \\*
-  #1 & #3 \textbullet #4 \\
-     & \begin{minipage}[t]{\rightcolwidth}
-         #6
-       \end{minipage} \\*
+\NewDocumentCommand{\project}{m o m m m m o}{
+  \multirowcell{2}[0ex][r]{%
+    \IfValueTF{#2}{#2}{\ifdef{\@zh}{现在}{present}} \\ #1%
+  }
+  & \textbf{#5} \\*
+  \ifdef{\@zh}{%
+    & #3 \textbullet #4 \\*
+  }{%
+    & #4, #3 \\*
+  }
+  & \begin{minipage}[t]{\rightcolwidth} #6 \end{minipage} \\*
   \IfValueT{#7}{%
     & \footnotesize{\tags{#7}} \\
   }
