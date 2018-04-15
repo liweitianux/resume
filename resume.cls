@@ -141,11 +141,15 @@
 \setlength{\parindent}{0em}
 
 % Line spacing
-\linespread{1.1}
+\ifdef{\@zh}{
+  \linespread{1.15}
+}{
+  \linespread{1.05}
+}
 
 % Setup resume sections
 \titleformat{\section}{\Large\raggedright}{}{0.2em}{}[\titlerule]
-\titlespacing{\section}{0em}{0.1em}{0.1em}
+\titlespacing{\section}{0em}{0.1em}{0em}  % <left><before><after>
 
 % Configure list via 'enumitem'
 \setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=2em}
@@ -197,7 +201,7 @@
 \newcommand*{\tag}[1]{%
   \tikz[baseline]
   \node[anchor=base,
-        draw=accentcolor!60,
+        draw=accentcolor!40,
         rounded corners=0.5ex,
         inner xsep=0.8ex,
         inner ysep=0.5ex,
