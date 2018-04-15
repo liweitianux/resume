@@ -1,0 +1,378 @@
+%%
+%% Copyright (c) 2018 Weitian LI
+%%
+%% Resume / Résumé
+%% A short document (1-2 pages) to sum up the job-related accomplishments
+%% and experience.
+%%
+%% Information Checklist:
+%% * Contact Information
+%% * Work History / Experience
+%% * Education
+%% * Skills
+%% * Summary & Objective (optional)
+%% * Hobbies & Interests (optional)
+%%
+%% References:
+%% * CV vs. Resume: What is the Difference? When to Use Which?
+%%   https://uptowork.com/blog/cv-vs-resume-difference
+%% * How to Make a Resume: A Step-by-Step Guide (+30 Examples)
+%%   https://uptowork.com/blog/how-to-make-a-resume
+%% * Entry-Level Resume: Sample and Complete Guide (+20 Examples)
+%%   https://uptowork.com/blog/entry-level-resume-example
+%%
+%% Weitian LI <liweitianux@live.com>
+%% 2018-04-14
+%%
+
+% English version
+\documentclass{resume}
+
+% File information shown at the footer of the last page
+\fileinfo{%
+  \faCopyright{} 2018 Weitian LI,
+  \creativecommons{by}{4.0}, v\today
+}
+
+% Position and place
+\newcommand{\myposition}{Data Analyst}
+\newcommand{\myplace}{Shenzhen}
+
+\name{Weitian}{LI}
+\tagline{\myposition{} @ \myplace}
+\taglineicon{\faBinoculars}
+\keywords{\myposition, \myplace, Python, Linux, BSD}
+\photo{7em}{photo}
+
+% NOTE: adjust the ordering and styles w.r.t. Chinese version
+\socialinfo{
+  \mobile{132-6262-0332}
+  \email{liweitianux@live.com}
+  \github{liweitianux} \\
+  \degree{PhD (candidate), Physics}
+  \university{Shanghai Jiao Tong University (SJTU)} \\
+  \address{Shanghai}
+  \home{Shaoyang, Hunan}
+  \birthday{September 26, 1991}
+}
+
+\begin{document}
+\makeheader
+
+%======================================================================
+% Summary & Objectives
+%======================================================================
+Highly-motivated PhD candidate in Physics with good foundations of math
+and statistics, and familiar with the basics of machine learning as well
+as signal and image processing.
+Enthusiastic about computer technologies with 10 years experience
+in Linux and BSD, and involved in several open source projects (e.g.,
+DragonFly BSD).
+Skilled in programming (Python, R, etc.) and data analysis,
+and looking to fill a position as a \emph{\myposition} at your company
+that I can grow with as I achieve company goals.
+
+%======================================================================
+% Competences / Skills
+\sectionTitle{Competences}{\faWrench}
+%======================================================================
+\begin{competences}[10em]
+  \comptence{Operating Systems}%
+    {Linux (10 years), BSD (DragonFly BSD, FreeBSD; 7 years)}
+  \comptence{Programming}%
+    {Python, Shell, C; R, Julia}
+  \comptence{Data Analysis}%
+    {R, pandas, scikit-learn; matplotlib, ggplot2; SQL (basic knowledge)}
+  \comptence{Tools}%
+    {Regular expression; Jupyter Notebook; SSH, Git, Make; Ansible}
+  \comptence{Web Development}%
+    {Django, Tornado; jQuery, Bootstrap; JavaScript, HTML5}
+  \comptence{Typesetting}%
+    {\LaTeX, Con\TeX{}t}
+\end{competences}
+
+%======================================================================
+% Education
+\sectionTitle{Education}{\faGraduationCap}
+%======================================================================
+\begin{educations}
+  \education%
+    {September 2013}%
+    {Shanghai Jiao Tong University}%
+    {School of Physics and Astronomy}%
+    {Physics}%
+    {PhD (candidate; expected to graduate in early 2019)}
+
+  \separator{0.7em}
+  \education%
+    {September 2009}%
+    [June 2013]%
+    {Shanghai Jiao Tong University}%
+    {Department of Physics and Astronomy}%
+    {Applied Physics}%
+    {Bachelor's Degree}
+\end{educations}
+
+%======================================================================
+% Research Projects
+\sectionTitle{Research Projects}{\faCogs}
+%======================================================================
+\begin{projects}
+  \project
+    {January 2015}%
+    {National Natural Science Foundation of China}%
+    {Key Program}%
+    {Simulation of Low-Frequency Radio Sky and Separation of Weak
+     Astronomical Signals}%
+    {\begin{itemize}
+      \item Developed the low-frequency radio sky simulation software:
+        \link{https://github.com/liweitianux/fg21sim}{\texttt{FG21sim}}.
+      \item Significantly improved the modeling of radio halos,
+        and integrated the instrumental effects of radio interferometers.
+      \item Quantitatively evaluated the impacts of radio halos on
+        reionization signal detection, and finished the journal paper.
+      \item Collaborated in classifying the radio galaxies by morphologies
+        using a deep convolutional neutral network.
+      \item Used algorithms such as wavelet to denoise and enhance X-ray
+        astronomical images.
+      \item Extracted both the spatial and spectral information of X-ray
+        images, and used the support vector machine (SVM) to identify the
+        potential point sources.
+    \end{itemize}}%
+    [Machine learning, CNN, SVM, Image processing, Python]
+
+  \separator{0.7em}
+  \project
+    {July 2012}%
+    [December 2014]%
+    {National Natural Science Foundation of China}%
+    {Fund for Distinguished Young Scholars}%
+    {The X-ray Study of Galaxies and Clusters of Galaxies,
+      and the Research of Cosmic Low-Frequency Radio Radiation}%
+    {\begin{itemize}
+      \item Reduced the data of over 200 galaxy clusters observed by the
+        \textit{Chandra} X-ray Observatory, and analyzed the images and
+        spectra.
+      \item Built a sample of galaxy clusters, collected optical data from
+        SDSS, and investigated the correlation between the central emission
+        excess and the central dominating galaxy.
+      \item Developed and maintained a suite of data analysis utilities:
+        \link{https://github.com/liweitianux/chandra-acis-analysis}%
+          {\texttt{chandra-acis-analysis}}.
+    \end{itemize}}%
+    [Data collection, Data reduction, Statistical analysis, Python, Shell]
+\end{projects}
+
+%======================================================================
+% Experience
+\sectionTitle{Experience}{\faBriefcase}
+%======================================================================
+\begin{experiences}
+  \experience
+    {April 2018}%
+    {Attended \enquote{The 2$^{\rm nd}$ China-Australia SKA Big Data Workshop.}}%
+    [\begin{itemize}
+      \item Implemented the data transmission functionality between the
+        NGAS data storage system and the DALiuGE data processing system.
+      \item Learned team collaboration and agile development methods.
+    \end{itemize}]%
+    [Data transmission, Data storage, Agile development, Python]
+
+  \separator{0.5em}
+  \experience
+    {March 2018}%
+    {Became a DragonFly BSD committer.}%
+    [][BSD, Open source]
+
+  \separator{0.5em}
+  \experience
+    {March 2018}%
+    {Used Ansible to manage the VPS configurations,
+      and hosted authoritative DNS service for personal domains.}%
+    [][BSD, Ansible, DNS]
+
+  \separator{0.5em}
+  \experience
+    {February 2018}%
+    {Revised \enquote{The Chinese SKA Science White Book} by
+      rewriting the \enquote{Low-Frequency Observation Instruments} section.}
+
+  \separator{0.5em}
+  \experience
+    {December 2017}%
+    {Participated in configuring and testing the high-performance computing
+      cluster prototype for building the SKA Regional Science Center at
+      Shanghai Astronomy Observatory.}
+
+  \separator{0.5em}
+  \experience
+    {September 2017}%
+    {Involved in writing the
+      \enquote{Large-scale Diffuse Foreground Sources} section in
+      \enquote{The Chinese SKA Science White Book.}}
+
+  \separator{0.5em}
+  \experience
+    [April 2017]%
+    {August 2017}%
+    {Lung CT scan images analysis}%
+    [\begin{itemize}
+      \item Collaborated with \textit{Shanghai Chest Hospital},
+        attempted to identify the mutation types of lung tumors
+        by analyzing the CT scan images, in order to formulate a
+        better treatment plan.
+      \item Extracted the image features using the Gray Level Concurrence
+        Matrix (GLCM) and reduced with Principle Component Analysis (PCA),
+        but found that the information provided by the CT images was
+        insufficient to reliably predict the mutation types.
+    \end{itemize}]%
+    [Feature extraction, Data reduction, PCA]
+
+  \separator{0.5em}
+  \experience
+    {April 2017}%
+    {Configured a VPS running DragonFly BSD and serving personal email,
+      website, CalDAV/CardDAV, Git, etc.}%
+    [][BSD, Postfix, Dovecot, Nginx, Radicale, Git]
+
+  \separator{0.5em}
+  \experience
+    {December 2016}%
+    {Built and administrated a 4-node computer cluster for the team
+      to research the galaxy cluster merger processes by carrying out
+      hydrodynamic simulations.}%
+    [][CentOS, Slurm, Numerical simulation]
+
+  \separator{0.5em}
+  \experience
+    {November 2016}%
+    {Attended \enquote{BSD Meetup: BSD \& Cloud} @ Shanghai.}%
+    [][BSD, Open source]
+
+  \separator{0.5em}
+  \experience
+    {September 2016}%
+    {Participated
+      \enquote{The 13$^{\rm th}$ China Post-Graduate Mathematical
+        Contest in Modeling.}}%
+    [\begin{itemize}
+      \item Learned the Genome-Wide Association Study (GWAS) method
+        to locate the most likely Single-Nucleotide Polymorphisms (SNPs)
+        associated with a trait or disease.
+      \item Used the R programming language to perform Logistic regressions
+        and hypothesis testings between the SNP codes and traits, and
+        identified the most possible SNPs and genes that may cause the
+        disease.
+    \end{itemize}]%
+    [R, Regression analysis, Hypothesis testing]
+
+  \separator{0.5em}
+  \experience
+    [April 2014]%
+    {July 2014}%
+    {Organized
+      \enquote{The 1$^{\rm st}$ China--New Zealand Joint SKA Summer School.}}%
+    [\begin{itemize}
+      \item Designed and made the poster.
+      \item Designed and developed the website,
+        providing functionalities including user registration,
+        agenda management, announcements, lecture downloads, etc.
+    \end{itemize}]%
+    [Design, Django, Bootstrap, jQuery, JavaScript, MySQL]
+
+  \separator{0.5em}
+  \experience
+    [July 2013]%
+    {September 2013}%
+    {Summer intern @ 97 Suifang}%
+    [\begin{itemize}
+      \item Developed the website to help patients with \textit{hepatitis B}
+        track various indicators in their analysis reports.
+      \item Implemented the user registration, data storage and search
+        functions in the back end.
+      \item Used AJAX in the front end to visualize the temporal variations
+        of the indicators.
+    \end{itemize}]%
+    [Database, Data visualization, Django, AJAX]
+
+  \separator{0.5em}
+  \experience
+    [March 2010]%
+    {September 2011}%
+    {Involved in the Open Source Association of school}%
+    [][Open source, Linux]
+\end{experiences}
+
+%======================================================================
+% Languages
+%
+% References:
+% * How should I indicate language proficiency on my resume?
+%   https://workplace.stackexchange.com/a/10007
+% * How to write resume foreign language skills
+%   https://radiantresumeservices.com/how-to-write-resume-foreign-language-skills/
+%
+\sectionTitle{Languages}{\faLanguage}
+%======================================================================
+\begin{entries}[|]
+  \entry{\textbf{English}}{%
+    \begin{description}
+      \item[Reading] --- Intermediate
+        (read textbooks and literature)
+      \item[Writing] --- Intermediate
+        (write journal papers)
+      \item[Listening \& Speaking] --- Conversant
+    \end{description}
+  }
+
+  \separator{0.7em}
+  \entry{\textbf{Chinese}}{%
+    \begin{description}
+      \item[Writing] --- Good
+        (involved in writing Fund Applications, annual reports,
+        as well as writing and revising sections for
+        \enquote{The Chinese SKA Science White Book})
+      \item[Speaking] --- Good
+        (5 semesters of teaching assistant experience)
+    \end{description}
+  }
+\end{entries}
+
+%======================================================================
+% Teaching Assistant
+\sectionTitle{Teaching Assistant}{\faUsers}
+%======================================================================
+\begin{entries}
+  \entry{Spring 2017}%
+    {The Universe Around Us (liberal education)}
+  \entry{Fall 2015}%
+    {Introduction to Physics II (Zhiyuan Honors Program)}
+  \entry{Spring 2015}%
+    {Introduction to Physics I (Zhiyuan Honors Program)}
+  \entry{Fall 2014}%
+    {Introduction to Physics I (Zhiyuan Honors Program)}
+  \entry{Spring 2014}%
+    {College Physics (Outstanding Teaching Assistant Award)}
+\end{entries}
+
+%======================================================================
+% Awards / Scholarships / Certificates
+\sectionTitle{Awards \& Certificates}{\faTrophy}
+%======================================================================
+\begin{entries}
+  \entry{September 2016}%
+    {Participation Award,
+      The 13$^{\rm th}$ China Post-Graduate Mathematical Contest in Modeling}
+  \entry{November 2013}%
+    {Outstanding PhD Student Entrance Scholarship of Shanghai Jiao Tong University}
+  \entry{October 2012}%
+    {Advanced Individual of Shanghai Jiao Tong University}
+  \entry{December 2011}%
+    {National Astronomical Observatory Scholarship}
+  \entry{September 2011}%
+    {Network Engineer (Level 4), National Computer Rank Examination}
+\end{entries}
+
+\end{document}
+
+%% EOF
