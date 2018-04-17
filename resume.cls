@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2018/04/17 v2.1.0 Resume Class]
+\ProvidesClass{resume}[2018/04/17 v2.2.0 Resume Class]
 \LoadClass{article}
 
 %%
@@ -21,8 +21,7 @@
 
 \DeclareOption{monochrome}{\def\@monochrome{true}}
 \DeclareOption{zh}{\def\@zh{true}}
-
-\ProcessOptions
+\ProcessOptions\relax
 
 %%
 %% Packages
@@ -532,4 +531,5 @@
   \end{minipage}%
 }
 
+\endinput
 %% EOF

@@ -18,7 +18,9 @@ by Alessandro Plasmati.
 
 License
 -------
-* The LaTeX class and style files are published under the
+* The LaTeX class `resume.cls` is distributed under the
   [LaTeX Project Public License (LPPL) Version 1.3c](https://www.latex-project.org/lppl.txt).
+* The tool `make-fontawesome5.py` is distributed under the
+  [MIT License](https://opensource.org/licenses/MIT).
 * All content files are published under the
   [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
