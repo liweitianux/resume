@@ -7,3 +7,5 @@ auto/
 photos/
 photo.*
 submitted/
+dist/
+*.tar.bz2

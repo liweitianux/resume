@@ -9,6 +9,9 @@ DEPS:= resume.cls fontawesome.sty
 SRCS:= resume-zh.tex resume-en.tex
 PDFS:= $(SRCS:%.tex=%.pdf)
 
+DATE= $(shell date +%Y%m%d)
+DISTDIR= resume.$(DATE)
+
 all: $(PDFS)
 
 resume-zh.pdf: resume-zh.tex $(DEPS)
@@ -16,6 +19,12 @@ resume-zh.pdf: resume-zh.tex $(DEPS)
 
 resume-en.pdf: resume-en.tex $(DEPS)
 	latexmk -xelatex $<
+
+dist: all
+	mkdir $(DISTDIR)
+	cp Makefile $(DEPS) $(SRCS) $(PDFS) $(DISTDIR)/
+	tar -cjf $(DISTDIR).tar.bz2 $(DISTDIR)/
+	rm -r $(DISTDIR)
 
 clean:
 	for f in $(SRCS); do \
@@ -28,7 +37,7 @@ cleanall:
 		latexmk -C $$f; \
 	done
 
-.PHONY: clean cleanall
+.PHONY: dist clean cleanall
 
 
 # One liner to get the value of any makefile variable
