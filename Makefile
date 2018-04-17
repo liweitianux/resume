@@ -5,20 +5,23 @@
 # 2018-04-12
 #
 
-DEPS:= resume.cls fontawesome.sty
+DEPS:= resume.cls fontawesome5/fontawesome5.sty
 SRCS:= resume-zh.tex resume-en.tex
 PDFS:= $(SRCS:%.tex=%.pdf)
 
 DATE= $(shell date +%Y%m%d)
 DISTDIR= resume.$(DATE)
 
+# Environment variables
+TEXINPUTS:= .:fontawesome5:$(TEXINPUTS)
+
 all: $(PDFS)
 
 resume-zh.pdf: resume-zh.tex $(DEPS)
-	latexmk -xelatex $<
+	env TEXINPUTS=$(TEXINPUTS) latexmk -xelatex $<
 
 resume-en.pdf: resume-en.tex $(DEPS)
-	latexmk -xelatex $<
+	env TEXINPUTS=$(TEXINPUTS) latexmk -xelatex $<
 
 dist: all
 	mkdir $(DISTDIR)

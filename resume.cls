@@ -36,7 +36,7 @@
 \RequirePackage{xparse}
 \RequirePackage{etoolbox}
 \RequirePackage{fontspec}
-\RequirePackage{fontawesome}
+\RequirePackage[regular]{fontawesome5}
 \RequirePackage{parskip}  % auto adjust parskip and items skip
 \RequirePackage{titlesec}
 \RequirePackage{enumitem}
@@ -100,18 +100,7 @@
   \setCJKmonofont{Noto Sans Mono CJK SC}
 }{}
 
-% Color setup
-\ifdef{\@monochrome}%
-  {\definecolor{basecolor}{HTML}{000000}}%
-  {\definecolor{basecolor}{HTML}{000066}}  % blue
-%
-\definecolor{darkGrey}{HTML}{989898}
-%
-\colorlet{linkcolor}{basecolor}
-\colorlet{accentcolor}{linkcolor!90}
-\colorlet{symbolcolor}{linkcolor!85}
-
-% Font Awesome icons aliases
+% Font Awesome icon aliases
 \newcommand*{\birthdaySymbol}{\faBirthdayCake}
 \newcommand*{\degreeSymbol}{\faGraduationCap}
 \newcommand*{\githubSymbol}{\faGithub}
@@ -123,6 +112,17 @@
 \newcommand*{\locationSymbol}{\faMapMarker}
 \newcommand*{\phoneSymbol}{\faPhone}
 \newcommand*{\universitySymbol}{\faUniversity}
+
+% Color setup
+\ifdef{\@monochrome}%
+  {\definecolor{basecolor}{HTML}{000000}}%
+  {\definecolor{basecolor}{HTML}{000066}}  % blue
+%
+\definecolor{darkGrey}{HTML}{989898}
+%
+\colorlet{linkcolor}{basecolor}
+\colorlet{accentcolor}{linkcolor!90}
+\colorlet{symbolcolor}{linkcolor!85}
 
 % Date format: yyyy.mm.dd
 \newcommand*{\twodigits}[1]{\ifnum#1<10 0\fi\the#1}
@@ -505,7 +505,7 @@
   \textbf{#1} &
     \foreach \x in {1,...,5}{%
       \color{accentcolor!80}{%
-        \ifnumgreater{\x}{#2}{\faCircleThin}{\faCircle}
+        \ifnumgreater{\x}{#2}{\faCircleNotched}{\faCircle}
       }
     } \enspace \\
 }
