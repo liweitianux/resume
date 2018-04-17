@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2018/04/17 v2.2.0 Resume Class]
+\ProvidesClass{resume}[2018/04/17 v2.2.1 Resume Class]
 \LoadClass{article}
 
 %%
@@ -176,10 +176,13 @@
     {\faCreativeCommons{} \uppercase{#1} #2}%
 }
 
-\newcommand*{\link}[2]{\textcolor{linkcolor}{\href{#1}{#2}}}
-\newcommand*{\important}[1]{\textbf{#1}}
+\newcommand*{\githublink}[2]{%
+  \href{http://github.com/#1/#2}%
+  {\githubSymbol{} #1/#2}%
+}
 
-% Render an icon
+\newcommand*{\link}[2]{\textcolor{linkcolor}{\href{#1}{#2}}}
+
 \newcommand*{\icon}[1]{%
   \makebox[1em][c]{\textcolor{symbolcolor}{#1}}%
   \hspace{0.2em}%
