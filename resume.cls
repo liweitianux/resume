@@ -12,8 +12,8 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2018/04/11 v2.0.0 'Resume' Class]
-\LoadClass[a4paper]{article}
+\ProvidesClass{resume}[2018/04/17 v2.1.0 Resume Class]
+\LoadClass{article}
 
 %%
 %% Class options
@@ -28,13 +28,16 @@
 %% Packages
 %%
 
+\RequirePackage[%
+  a4paper,%
+  margin=1.5cm,%
+  includefoot,
+]{geometry}
 \RequirePackage{xparse}
 \RequirePackage{etoolbox}
 \RequirePackage{fontspec}
 \RequirePackage{fontawesome}
-\RequirePackage{parskip}
-\RequirePackage{fullpage}
-\RequirePackage[margin=1.5cm]{geometry}
+\RequirePackage{parskip}  % auto adjust parskip and items skip
 \RequirePackage{titlesec}
 \RequirePackage{enumitem}
 \RequirePackage{setspace}
@@ -43,14 +46,13 @@
 \RequirePackage{makecell}  % multirowcell
 \RequirePackage{longtable}
 \RequirePackage[usenames,dvipsnames]{xcolor}
-\RequirePackage[skins]{tcolorbox}
 \RequirePackage{tikz}
-\RequirePackage{ulem}
-%\ifdef{\@zh}{
+\RequirePackage[skins]{tcolorbox}  % required by tikz to make the header
+\RequirePackage{csquotes}
+\RequirePackage{microtype}
+\ifdef{\@zh}{
   \RequirePackage{xeCJK}
-  \RequirePackage{CJKulem}
-  \RequirePackage{csquotes}
-%}{}
+}{}
 
 %
 % Hyperref
@@ -91,12 +93,12 @@
 \setmonofont{M+ 1mn}
 
 % Chinese setup
-%\ifdef{\@zh}{
+\ifdef{\@zh}{
   \xeCJKsetup{PunctStyle=hangmobanjiao}
   \setCJKmainfont{Noto Serif CJK SC}[BoldFont=Noto Sans CJK SC]
   \setCJKsansfont{Noto Sans CJK SC}
   \setCJKmonofont{Noto Sans Mono CJK SC}
-%}{}
+}{}
 
 % Color setup
 \ifdef{\@monochrome}%
@@ -214,6 +216,15 @@
   \icon{\faTags}
   \foreach \n in {#1}{\tag{\n}\hspace{0.1em}}
 }
+
+%%
+%% Position and location
+%%
+
+\newcommand*{\setposition}[1]{\def\@position{#1}}
+\newcommand*{\getposition}{\@position}
+\newcommand*{\setlocation}[1]{\def\@location{#1}}
+\newcommand*{\getlocation}{\@location}
 
 %%
 %% Header
