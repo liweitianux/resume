@@ -35,14 +35,13 @@
   \creativecommons{by}{4.0}, v\today
 }
 
-% Position and place
-\newcommand{\myposition}{Data Analyst}
-\newcommand{\myplace}{Shenzhen}
-
 \name{Weitian}{LI}
-\tagline{\myposition{} @ \myplace}
+\setposition{Data Analyst}
+\setlocation{Shenzhen}
+
+\tagline{\getposition{} @ \getlocation}
 \taglineicon{\faBinoculars}
-\keywords{\myposition, \myplace, Python, Linux, BSD}
+\keywords{\getposition, \getlocation, Python, Linux, BSD}
 \photo{7em}{photo}
 
 % NOTE: adjust the ordering and styles w.r.t. Chinese version
@@ -70,8 +69,8 @@ Enthusiastic about computer technologies with 10 years experience
 in Linux and BSD, and involved in several open source projects (e.g.,
 DragonFly BSD).
 Skilled in programming (Python, R, etc.) and data analysis,
-and looking to fill a position as a \emph{\myposition} at your company
-that I can grow with as I achieve company goals.
+and looking to fill a position as a \textbf{\getposition}
+at your company that I can grow with as I achieve company goals.
 
 %======================================================================
 % Competences / Skills

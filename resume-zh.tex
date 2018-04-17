@@ -35,14 +35,13 @@
   \creativecommons{by}{4.0}, v\today
 }
 
-% position and place
-\newcommand{\myposition}{数据分析师}
-\newcommand{\myplace}{深圳}
-
 \name{维天}{李}
-\tagline{\myposition{} @ \myplace}
+\setposition{数据分析师}
+\setlocation{深圳}
+
+\tagline{\getposition{} @ \getlocation}
 \taglineicon{\faBinoculars}
-\keywords{\myposition, \myplace, Python, Linux, BSD}
+\keywords{\getposition, \getlocation, Python, Linux, BSD}
 \photo{7em}{photo}
 
 \socialinfo{
@@ -68,7 +67,7 @@
 热衷计算机技术，有 10 年的 Linux 和 BSD 使用经验。
 热爱自由开源精神，并积极参与 DragonFly BSD 等多个开源项目。
 拥有计算机专长，能熟练使用 Python 和 R 语言开展数据分析工作，
-真诚应聘贵公司的\emph{\myposition}职位。
+真诚应聘贵公司的\textbf{\getposition}职位。
 \par}  % NOTE: \par is needed
 
 %======================================================================
