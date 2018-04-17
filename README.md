@@ -16,6 +16,19 @@ by Christophe Roger, which is further based on the
 [Plasmati Graduate CV](https://www.latextemplates.com/template/plasmati-graduate-cv)
 by Alessandro Plasmati.
 
+Font Awesome 5
+--------------
+I wrote a simple tool [`make-fontawesome5.py`](fontawesome5/make-fontawesome5.py)
+to generate the LaTeX style file for using the latest *Font Awesome 5* in LaTeX.
+A pre-generated style file [`fontawesome5.sty`](fontawesome5/fontawesome5.sty) is
+also provided.
+
+*NOTE*: All the following 3 fonts released by the Font Awesome project should be
+installed into the system:
+* Font Awesome 5 Free (generic icons in regular style, much less than the solid style)
+* Font Awesome 5 Free Solid (generic icons in solid style)
+* Font Awesome 5 Free Brands (various brand icons)
+
 License
 -------
 * The LaTeX class `resume.cls` is distributed under the
