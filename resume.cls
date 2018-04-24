@@ -108,7 +108,7 @@
 \newcommand*{\mailSymbol}{\faEnvelope}
 \newcommand*{\mobileSymbol}{\faPhone}  % \faMobilePhone is too narrow
 \newcommand*{\linkedinSymbol}{\faLinkedin}
-\newcommand*{\locationSymbol}{\faMapMarker}
+\newcommand*{\locationSymbol}{\faMapMarkerAlt}
 \newcommand*{\phoneSymbol}{\faPhone}
 \newcommand*{\universitySymbol}{\faUniversity}
 
@@ -146,12 +146,12 @@
 \ifdef{\@zh}{
   \linespread{1.15}
 }{
-  \linespread{1.05}
+  \linespread{1.02}
 }
 
 % Setup resume sections
 \titleformat{\section}{\Large\raggedright}{}{0.2em}{}[\titlerule]
-\titlespacing{\section}{0em}{0.1em}{0em}  % <left><before><after>
+\titlespacing{\section}{0em}{0.1ex}{0ex}  % <left><before><after>
 
 % Configure list via 'enumitem'
 \setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=2em}
