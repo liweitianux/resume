@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2018/04/17 v2.2.1 Resume Class]
+\ProvidesClass{resume}[2018/07/01 v2.3.0 Resume Class]
 \LoadClass{article}
 
 %%
@@ -70,13 +70,14 @@
     },%
     pdftitle={%
       \ifdef{\@zh}{%
-        简历 | \@lastname{} \@firstname{} | \@tagline%
+        简历 | \@lastname{} \@firstname{}
+        \ifdef{\@tagline}{| \@tagline}{}%
       }{%
-        Resume | \@firstname{} \@lastname{} | \@tagline%
+        Resume | \@firstname{} \@lastname{}
+        \ifdef{\@tagline}{| \@tagline}{}%
       }%
     },%
-    pdfsubject={\@tagline},%
-    pdfkeywords={\@keywords},%
+    pdfkeywords={\ifdef{\@keywords}{\@keywords}{}},%
   }%
 }
 \RequirePackage{hyperref}
@@ -134,8 +135,8 @@
 
 % Last-page style
 \def\ps@lastpage{%
-  \def\@oddfoot{\textcolor{lightgray}{\footnotesize\@fileinfo}\hfil}%
-  \def\@evenfoot{\textcolor{lightgray}{\footnotesize\@fileinfo}\hfil}%
+  \def\@oddfoot{\textcolor{gray}{\footnotesize\@fileinfo}\hfil}%
+  \def\@evenfoot{\textcolor{gray}{\footnotesize\@fileinfo}\hfil}%
 }
 \AtEndDocument{\thispagestyle{lastpage}}
 
@@ -321,12 +322,14 @@
     \begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}
   }
     \user{\@firstname}{\@lastname}
-    \smallskip \\
-    \ifdef{\@taglineicon}{%
-      \resumetitle{\icon{\@taglineicon}\@tagline}
-    }{%
-      \resumetitle{\@tagline}
-    }
+    \ifdef{\@tagline}{%
+      \smallskip \\
+      \ifdef{\@taglineicon}{%
+        \resumetitle{\icon{\@taglineicon}\@tagline}
+      }{%
+        \resumetitle{\@tagline}
+      }
+    }{}
     \smallskip \\
     \@socialinfo
   \end{minipage}
