@@ -67,9 +67,9 @@
 物理学专业直博研究生，有扎实的物理、数学与统计学基础，
 擅长数据建模与分析，热爱计算机和网络技术，
 有 10 年的 Linux 和 BSD 使用经验，
-精通常用的命令行工具，熟练掌握 Shell、Python 和 C 语言编程。
+熟悉常用的命令行工具，熟练掌握 Shell、Python 和 C 语言编程。
 积极实践自由开源精神，在 \link{https://github.com/liweitianux}{GitHub}
-上分享多个项目，是 DragonFly BSD 项目的开发者，
+上分享多个项目，是 DragonFly BSD 操作系统的开发者，
 并积极参与其他多个开源项目。
 %真诚应聘贵公司的\textbf{\getposition}职位，
 期待加入贵公司，帮助实现公司目标，同时获得自身成长。
@@ -85,17 +85,16 @@
     \icon{\faFreebsd} BSD（DragonFly BSD 和 FreeBSD, 7 年）
   }
   \comptence{编程}{%
-    Python, Shell, C; R, Julia
+    Python, C, Shell, R
   }
   \comptence{工具}{%
-    Ansible; SSH, tmux, Git, make;
-    正则表达式
+    正则表达式, SSH, Git, make, Ansible
   }
   \comptence{网站开发}{%
-    Django, Tornado; jQuery, Bootstrap; JavaScript, HTML5
+    Django, Flask; jQuery, Bootstrap; JavaScript, HTML5, CSS
   }
   \comptence{数据分析}{%
-    R, pandas, scikit-learn; matplotlib, ggplot2; SQL
+    R, pandas; matplotlib, ggplot2, Plotly; SQL
   }
 %  \comptence{排版}{
 %    \LaTeX, Con\TeX{}t
@@ -138,17 +137,15 @@
     {重点项目}%
     {低频射电天空的高精度仿真与微弱天体辐射信号的识别}%
     {\begin{itemize}
-      \item 合作利用深度卷积神经网络（CNN）对 FIRST 巡天的射电星系图像
-            根据形态特征进行分类
       \item 使用 Python 开发低频射电天空图像模拟软件：
             \link{https://github.com/liweitianux/fg21sim}{\texttt{FG21sim}}
-      \item 利用小波分析等算法，对 X 射线天文图像进行去噪与增强
-      \item 提取 X 射线天文图像的空间和光谱信息，利用支持向量机（SVM）
-            进行分类，探测点源
       \item 显著改进星系团射电晕的建模，并考虑低频干涉阵列的复杂仪器效应
-%      \item 量化评估射电晕对探测宇宙再电离信号的影响，并完成期刊论文
+      \item 利用深度卷积神经网络（CNN）对 FIRST 巡天的射电星系图像
+            根据形态特征进行分类
+      \item 利用卷积自动编码器（CAE）在观测频率维度识别并提取微弱的
+            宇宙再电离信号
     \end{itemize}}%
-    [Python, 高性能计算, 机器学习, CNN, SVM, 图像处理]
+    [数值模拟, 数据分析, 机器学习, CNN, CAE, 图像处理]
 
   \separator{0.7em}
   \project
@@ -158,8 +155,9 @@
     {杰出青年基金}%
     {星系和星系团的 X 射线研究、宇宙低频射电辐射研究}%
     {\begin{itemize}
-      \item 处理 200 多个 \textit{Chandra} X 射线卫星观测的星系团数据，
-            分析其图像与光谱
+      \item 处理 200 多个星系团的 \textit{Chandra} 卫星观测数据，
+            开展图像与光谱研究
+      \item 改进 X 射线光谱各背景成分的建模，得到更可靠的光谱拟合结果
       \item 构建样本，搜集 SDSS 光学波段数据，研究星系团中央辐射超出
             与其中央主导星系之间的关联
       \item 编写并维护一套数据处理程序：
@@ -216,13 +214,14 @@
 \begin{experiences}
   \experience
     [2018.04]%
-    {2018.05}%
-    {实习（数据工程师） @ 上海领脉网络科技有限公司（初创公司）}%
+    {2018.07}%
+    {实习（数据分析） @ 上海领脉网络科技（初创公司）}%
     [\begin{itemize}
-      \item 使用 Python 从 Amazon 网页搜索并挖取商品信息
-      \item 研究并部署 Airflow 定期执行数据挖取任务
+      \item 编写程序用于从 Amazon 网页搜索并挖取商品信息
+      \item 部署 Airflow 服务器用于定期执行数据挖取任务
+      \item 基于 Plotly Dash 开发交互式数据可视化界面，帮助优化广告投放
     \end{itemize}]%
-    [数据挖取, 网页分析, Python, Airflow]
+    [数据挖取, 数据可视化, Python]
 
 %  \separator{0.5em}
 %  \experience
@@ -242,13 +241,13 @@
   \experience
     [2018.03]%
     {现在}%
-    {DragonFly BSD 开发者}%
+    {DragonFly BSD 操作系统开发者}%
     [\begin{itemize}
       \item 改进内核网络工具
-      \item 更新 RC 脚本和编译系统
+      \item 更新 RC 脚本和 Makefile 编译系统
       \item 参与邮件列表和 IRC 频道讨论和回答问题
     \end{itemize}]%
-    [BSD, 开源, 编程, 网络]
+    [BSD, 操作系统, 开源, 编程, 网络]
 
 %  \separator{0.5em}
 %  \experience
@@ -284,8 +283,8 @@
   \experience
     {现在 \newline 2017.04}%
     {使用 Ansible 配置和管理 VPS，运行 DragonFly BSD 系统，
-      部署个人域名邮箱、权威 DNS、网站、 CalDAV/CardDAV、Git、IRC 等服务}%
-    [][BSD, Ansible, Postfix, Dovecot, DNS, Nginx, Firewall]
+      部署个人域名邮箱、权威 DNS、网站、 Git、IRC 等服务}%
+    [][BSD, Ansible, Email, DNS, Nginx, Firewall]
 
   \separator{0.5em}
   \experience
