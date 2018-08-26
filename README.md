@@ -1,12 +1,14 @@
-Resume LaTeX Template
-=====================
+My Resumes and LaTeX Template
+=============================
 
 **Weitian LI** `<wt@liwt.net>`
 
 Introduction
 ------------
-This repository holds my resumes (Chinese and English versions),
-the resume LaTeX template, and the Font Awesome 5 LaTeX style.
+This repository holds my resumes ([Chinese](resume-zh.pdf) and
+[English](resume-en.pdf) versions),
+the [resume LaTeX template](resume.cls),
+and the [Font Awesome 5 LaTeX style](fontawesome5/fontawesome5.sty).
 
 This template is based on the
 [YACC: Another Awesome CV](https://github.com/darwiin/yaac-another-awesome-cv)
