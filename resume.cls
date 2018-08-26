@@ -95,7 +95,7 @@
 
 % Chinese setup
 \ifdef{\@zh}{
-  \xeCJKsetup{PunctStyle=hangmobanjiao}
+  \xeCJKsetup{PunctStyle=kaiming}
   \setCJKmainfont{Noto Serif CJK SC}[BoldFont=Noto Sans CJK SC]
   \setCJKsansfont{Noto Sans CJK SC}
   \setCJKmonofont{Noto Sans Mono CJK SC}
@@ -146,7 +146,7 @@
 
 % Line spacing
 \ifdef{\@zh}{
-  \linespread{1.15}
+  \linespread{1.25}
 }{
   \linespread{1.02}
 }
