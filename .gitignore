@@ -3,6 +3,7 @@
 *.fls
 *.log
 *.out
+*.xdv
 auto/
 photos/
 photo.*
