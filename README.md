@@ -1,9 +1,7 @@
 Resume LaTeX Template
 =====================
 
-**Weitian LI**
-
-2018-04-14
+**Weitian LI** `<wt@liwt.net>`
 
 Introduction
 ------------
@@ -19,12 +17,15 @@ by Alessandro Plasmati.
 Font Awesome 5
 --------------
 I wrote a simple tool [`make-fontawesome5.py`](fontawesome5/make-fontawesome5.py)
-to generate the LaTeX style file for using the latest *Font Awesome 5* in LaTeX.
-A pre-generated style file [`fontawesome5.sty`](fontawesome5/fontawesome5.sty) is
-also provided.
+to generate the LaTeX style file for using the latest **Font Awesome 5**
+(the *free* edition) in LaTeX.
+A pre-generated style file [`fontawesome5.sty`](fontawesome5/fontawesome5.sty)
+(matches Font Awesome **v5.2.0**) is also provided.
 
-*NOTE*: All the following 3 fonts released by the Font Awesome project should be
-installed into the system:
+The Font Awesome fonts are designed by the
+[Font Awesome project](https://fontawesome.com/)
+and can be obtained from [here](https://fontawesome.com/how-to-use/on-the-desktop).
+*NOTE*: All the following 3 fonts should be installed into the system:
 * Font Awesome 5 Free (generic icons in regular style, much less than the solid style)
 * Font Awesome 5 Free Solid (generic icons in solid style)
 * Font Awesome 5 Free Brands (various brand icons)
