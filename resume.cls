@@ -35,7 +35,7 @@
 \RequirePackage{xparse}
 \RequirePackage{etoolbox}
 \RequirePackage{fontspec}
-\RequirePackage[regular]{fontawesome5}
+\RequirePackage{fontawesome5}
 \RequirePackage{parskip}  % auto adjust parskip and items skip
 \RequirePackage{titlesec}
 \RequirePackage{enumitem}
@@ -48,6 +48,7 @@
 \RequirePackage{tikz}
 \RequirePackage[skins]{tcolorbox}  % required by tikz to make the header
 \RequirePackage{csquotes}
+\RequirePackage[normalem]{ulem}
 \RequirePackage{microtype}
 \ifdef{\@zh}{
   \RequirePackage{xeCJK}
@@ -106,7 +107,7 @@
 \newcommand*{\githubSymbol}{\faGithub}
 \newcommand*{\homeSymbol}{\faHome}
 \newcommand*{\infoSymbol}{\faInfoCircle}
-\newcommand*{\mailSymbol}{\faEnvelope}
+\newcommand*{\mailSymbol}{\faAt}
 \newcommand*{\mobileSymbol}{\faPhone}  % \faMobilePhone is too narrow
 \newcommand*{\linkedinSymbol}{\faLinkedin}
 \newcommand*{\locationSymbol}{\faMapMarkerAlt}
