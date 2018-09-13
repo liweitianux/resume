@@ -27,10 +27,24 @@ A pre-generated style file [`fontawesome5.sty`](fontawesome5/fontawesome5.sty)
 The Font Awesome fonts are designed by the
 [Font Awesome project](https://fontawesome.com/)
 and can be obtained from [here](https://fontawesome.com/how-to-use/on-the-desktop).
-*NOTE*: All the following 3 fonts should be installed into the system:
-* Font Awesome 5 Free (generic icons in regular style, much less than the solid style)
-* Font Awesome 5 Free Solid (generic icons in solid style)
-* Font Awesome 5 Free Brands (various brand icons)
+**NOTE**: All the following 3 fonts should be installed into the system:
+* Font Awesome 5 Free
+  (generic icons in regular style, much less than the solid style)
+* Font Awesome 5 Free Solid
+  (generic icons in solid style)
+* Font Awesome 5 Free Brands
+  (various brand icons)
+
+Required Fonts
+--------------
+The following opensource fonts are used in the template:
+* [TeX Gyre](http://www.gust.org.pl/projects/e-foundry/tex-gyre)
+  (Pagella)
+* [Roboto](https://fonts.google.com/specimen/Roboto)
+* [M+](https://mplus-fonts.osdn.jp/about-en.html)
+  (1mn)
+* [Noto CJK](https://www.google.com/get/noto/help/cjk/)
+  (Serif, Sans, Sans Mono)
 
 License
 -------
