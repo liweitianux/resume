@@ -43,8 +43,7 @@ The following opensource fonts are used in the template:
 * [Roboto](https://fonts.google.com/specimen/Roboto)
 * [M+](https://mplus-fonts.osdn.jp/about-en.html)
   (1mn)
-* [Noto CJK](https://www.google.com/get/noto/help/cjk/)
-  (Serif, Sans, Sans Mono)
+* [Noto Serif CJK](https://www.google.com/get/noto/help/cjk/)
 
 License
 -------

@@ -96,9 +96,8 @@
 % Chinese setup
 \ifdef{\@zh}{
   \xeCJKsetup{PunctStyle=kaiming}
-  \setCJKmainfont{Noto Serif CJK SC}[BoldFont=Noto Sans CJK SC]
+  \setCJKmainfont{Noto Serif CJK SC}
   \setCJKsansfont{Noto Sans CJK SC}
-  \setCJKmonofont{Noto Sans Mono CJK SC}
 }{}
 
 % Font Awesome icon aliases
