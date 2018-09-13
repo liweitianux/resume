@@ -314,8 +314,8 @@
       \tikz\path[fill overzoom image={\@photo}]
         circle[radius=0.5\linewidth];
     \end{minipage}
+    \hspace{1em}
   }{}
-  \hspace{1em}
   \ifundef{\@photodiameter}{%
     \begin{minipage}{\linewidth}
   }{%
