@@ -1,13 +1,7 @@
-#
-# Makefile for alyresume
-#
-# Weitian LI
-# 2018-04-12
-#
-
 DEPS:= resume.cls fontawesome5/fontawesome5.sty
 SRCS:= resume-zh.tex resume-en.tex
 PDFS:= $(SRCS:%.tex=%.pdf)
+PDFCAT:= resume-zh+en.pdf
 
 DATE= $(shell date +%Y%m%d)
 DISTDIR= resume.$(DATE)
@@ -15,7 +9,10 @@ DISTDIR= resume.$(DATE)
 # Environment variables
 TEXINPUTS:= .:fontawesome5:$(TEXINPUTS)
 
-all: $(PDFS)
+all: $(PDFCAT)
+
+$(PDFCAT): $(PDFS)
+	pdfjoin -o $@ $(PDFS)
 
 resume-zh.pdf: resume-zh.tex $(DEPS)
 	env TEXINPUTS=$(TEXINPUTS) latexmk -xelatex $<
@@ -40,7 +37,7 @@ cleanall:
 		latexmk -C $$f; \
 	done
 
-.PHONY: dist clean cleanall
+.PHONY: all dist clean cleanall
 
 
 # One liner to get the value of any makefile variable
