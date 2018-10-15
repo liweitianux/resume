@@ -89,15 +89,13 @@
 
 % Fonts
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont{TeX Gyre Pagella}
-\setsansfont{Roboto}
-\setmonofont{M+ 1mn}
+\setmainfont{IBM Plex Serif}
+\setmonofont{IBM Plex Mono}
 
 % Chinese setup
 \ifdef{\@zh}{
   \xeCJKsetup{PunctStyle=kaiming}
-  \setCJKmainfont{Noto Serif CJK SC}
-  \setCJKsansfont{Noto Sans CJK SC}
+  \setCJKmainfont{Source Han Serif SC}
 }{}
 
 % Font Awesome icon aliases
@@ -158,13 +156,13 @@
 \setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=2em}
 \setlist[description,1]{style=sameline}
 
-% New length definition
+% Width of the left column for date ranges
 \newlength{\leftcolwidth}
 \newlength{\rightcolwidth}
 \ifdef{\@zh}{%
   \setlength{\leftcolwidth}{6em}
 }{
-  \setlength{\leftcolwidth}{7.5em}
+  \setlength{\leftcolwidth}{8.1em}
 }
 \setlength{\rightcolwidth}{\dimexpr \textwidth - \leftcolwidth - 4\tabcolsep}
 

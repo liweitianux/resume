@@ -38,12 +38,8 @@ and can be obtained from [here](https://fontawesome.com/how-to-use/on-the-deskto
 Required Fonts
 --------------
 The following opensource fonts are used in the template:
-* [TeX Gyre](http://www.gust.org.pl/projects/e-foundry/tex-gyre)
-  (Pagella)
-* [Roboto](https://fonts.google.com/specimen/Roboto)
-* [M+](https://mplus-fonts.osdn.jp/about-en.html)
-  (1mn)
-* [Noto Serif CJK](https://www.google.com/get/noto/help/cjk/)
+* [IBM Plex](https://github.com/IBM/plex) (Serif, Mono)
+* [Source Han Serif](https://github.com/adobe-fonts/source-han-serif)
 
 License
 -------
