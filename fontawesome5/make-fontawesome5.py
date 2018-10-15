@@ -46,38 +46,41 @@ STY_TEMPLATE = """%%
 %%
 %% Usage
 %% -----
-%% 1. \\usepackage{fontawesome}  %% default to *solid* style
+%% 1. \\usepackage{fontawesome}  %% Prefer *Solid* style by default
 %%    or
-%%    \\usepackage[regular]{fontawesome}  %% use *regular* style
+%%    \\usepackage[regular]{fontawesome}  %% Prefer *Regular* style
+%%
+%%    NOTE:
+%%    The *Solid* style has much more icons than the *Regular* style.
+%%    If one style doesn't have one icon, it fallbacks to the other style.
+%%
 %% 2. use an icon, e.g., \\faGitHub
 %%
 
 \\NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \\ProvidesPackage{fontawesome5}[%(date)s Font Awesome 5]
 
-\\RequirePackage{fontspec}
-
 \\DeclareOption{regular}{\\def\\FA@regular{true}}
 \\ProcessOptions\\relax
+
+\\RequirePackage{fontspec}
 
 %% Declare all variants
 %% Solid (default)
 \\newfontfamily\\FontAwesomeSolid[
-  BoldFont=Font Awesome 5 Free Solid,
+  BoldFont={Font Awesome 5 Free Solid},
 ]{Font Awesome 5 Free Solid}
 %% Regular
 \\newfontfamily\\FontAwesomeRegular[
-  BoldFont=Font Awesome 5 Free,
+  BoldFont={Font Awesome 5 Free},
 ]{Font Awesome 5 Free}
 %% Brands
 \\newfontfamily\\FontAwesomeBrands[
-  BoldFont=Font Awesome 5 Brands,
+  BoldFont={Font Awesome 5 Brands},
 ]{Font Awesome 5 Brands}
 
 %% Generic command displaying an icon by its name
-\\newcommand*{\\faicon}[1]{{
-  \FA\csname faicon@#1\endcsname
-}}
+%% \\newcommand*{\\faicon}[1]{{\FA\csname faicon@#1\endcsname}}
 
 %% Mappings
 %(mappings)s
