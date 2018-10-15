@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2018/07/01 v2.3.0 Resume Class]
+\ProvidesClass{resume}[2018/10/15 v2.4.0 Resume Class]
 \LoadClass{article}
 
 %%
