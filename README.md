@@ -1,12 +1,11 @@
-My Resumes and LaTeX Template
-=============================
+My Resume and LaTeX Template
+============================
 
 **Weitian LI** `<wt@liwt.net>`
 
 Introduction
 ------------
-This repository holds my resumes ([Chinese](resume-zh.pdf) and
-[English](resume-en.pdf) versions),
+This repository holds my [resume](resume-zh+en.pdf) (Chinese and English),
 the [resume LaTeX template](resume.cls),
 and the [Font Awesome 5 LaTeX style](fontawesome5/fontawesome5.sty).
 
