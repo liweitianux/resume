@@ -1,5 +1,5 @@
 %%
-%% Copyright (c) 2018 Weitian LI
+%% Copyright (c) 2018-2019 Weitian LI
 %% Copyright (c) 2016 Christophe Roger
 %% The LaTeX Project Public License (LPPL) Version 1.3c
 %%
@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2018/10/15 v2.4.0 Resume Class]
+\ProvidesClass{resume}[2019/01/06 v2.4.1 Resume Class]
 \LoadClass{article}
 
 %%
@@ -150,7 +150,7 @@
 
 % Setup resume sections
 \titleformat{\section}{\Large\raggedright}{}{0.2em}{}[\titlerule]
-\titlespacing{\section}{0em}{0.1ex}{0ex}  % <left><before><after>
+\titlespacing{\section}{0em}{1ex}{1ex}  % <left><before><after>
 
 % Configure list via 'enumitem'
 \setlist[itemize,1]{label=\faAngleRight, nosep, leftmargin=2em}
