@@ -10,6 +10,8 @@ DISTDIR= resume.$(DATE)
 TEXINPUTS:= .:fontawesome5:$(TEXINPUTS)
 
 all: $(PDFCAT)
+en: resume-en.pdf
+zh: resume-zh.pdf
 
 $(PDFCAT): $(PDFS)
 	pdfjoin -o $@ $(PDFS)
@@ -37,7 +39,7 @@ cleanall:
 		latexmk -C $$f; \
 	done
 
-.PHONY: all dist clean cleanall
+.PHONY: all en zh dist clean cleanall
 
 
 # One liner to get the value of any makefile variable
