@@ -40,8 +40,3 @@ cleanall:
 	done
 
 .PHONY: all en zh dist clean cleanall
-
-
-# One liner to get the value of any makefile variable
-# Credit: http://blog.jgc.org/2015/04/the-one-line-you-should-add-to-every.html
-print-%: ; @echo $*=$($*)
