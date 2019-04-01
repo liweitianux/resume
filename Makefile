@@ -14,7 +14,7 @@ en: resume-en.pdf
 zh: resume-zh.pdf
 
 $(PDFCAT): $(PDFS)
-	pdfjoin -o $@ $(PDFS)
+	pdftk $(PDFS) cat output $@
 
 resume-zh.pdf: resume-zh.tex $(DEPS)
 	env TEXINPUTS=$(TEXINPUTS) latexmk -xelatex $<
