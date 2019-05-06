@@ -17,9 +17,16 @@ by Alessandro Plasmati.
 
 Font Awesome 5
 --------------
-I wrote a simple tool [`make-fontawesome5.py`](fontawesome5/make-fontawesome5.py)
-to generate the LaTeX style file for using the latest **Font Awesome 5**
-(the *free* edition) in LaTeX.
+I wrote a simple tool [`make-fontawesome5.py`](fontawesome5/make-fontawesome5.py),
+which will download the latest icon list from the
+[Font Awesome](https://github.com/FortAwesome/Font-Awesome) project
+and then generate the LaTeX style file for using the latest
+**Font Awesome 5** (the *free* edition) in LaTeX.
+
+This Python script requires the [`PyYAML`](https://github.com/yaml/pyyaml)
+package, which can be installed with `pip3 install --user PyYAML`
+or `sudo apt install python3-yaml`.
+
 A pre-generated style file [`fontawesome5.sty`](fontawesome5/fontawesome5.sty)
 (matches Font Awesome **v5.2.0**) is also provided.
 

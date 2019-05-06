@@ -21,10 +21,11 @@ Credits:
 import os
 import sys
 import argparse
-import yaml
 import urllib.request
 from datetime import datetime
 
+# Require the 'PyYAML' package (or 'python3-yaml' package on Debian)
+import yaml
 
 FA_URL = "https://github.com/FortAwesome/Font-Awesome"
 ICONS_URL = FA_URL + "/raw/master/advanced-options/metadata/icons.yml"
