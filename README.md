@@ -21,7 +21,7 @@ I wrote a simple tool [`make-fontawesome5.py`](fontawesome5/make-fontawesome5.py
 which will download the latest icon list from the
 [Font Awesome](https://github.com/FortAwesome/Font-Awesome) project
 and then generate the LaTeX style file for using the latest
-**Font Awesome 5** (the *free* edition) in LaTeX.
+**Font Awesome 5** fonts (the *free* edition) in LaTeX.
 
 This Python script requires the [`PyYAML`](https://github.com/yaml/pyyaml)
 package, which can be installed with `pip3 install --user PyYAML`
@@ -33,7 +33,8 @@ A pre-generated style file [`fontawesome5.sty`](fontawesome5/fontawesome5.sty)
 The Font Awesome fonts are designed by the
 [Font Awesome project](https://fontawesome.com/)
 and can be obtained from [here](https://fontawesome.com/how-to-use/on-the-desktop).
-**NOTE**: All the following 3 fonts should be installed into the system:
+**NOTE**:
+All the following 3 fonts should be installed into the system:
 * Font Awesome 5 Free
   (generic icons in regular style, much less than the solid style)
 * Font Awesome 5 Free Solid
@@ -41,11 +42,29 @@ and can be obtained from [here](https://fontawesome.com/how-to-use/on-the-deskto
 * Font Awesome 5 Free Brands
   (various brand icons)
 
+i.e., the following 3 OTF files are needed:
+* `Font Awesome 5 Free-Regular-400.otf`
+* `Font Awesome 5 Free-Solid-900.otf`
+* `Font Awesome 5 Brands-Regular-400.otf`
+
 Required Fonts
 --------------
 The following opensource fonts are used in the template:
 * [IBM Plex](https://github.com/IBM/plex) (Serif, Mono)
 * [Source Han Serif](https://github.com/adobe-fonts/source-han-serif)
+
+Fonts Installation
+------------------
+On **Linux** systems, create a directory for each font family under
+`~/.local/share/fonts`, then copy the font files (OTF or TTF) over,
+then execute `fc-cache -f` to refresh the font cache, done.
+
+Take the *Font Awesome* font family as an example:
+
+1. `mkdir ~/.local/share/fonts/FontAwesome`
+2. `cp <font-awesome-otf-files> ~/.local/share/fonts/FontAwesome/`
+3. `fc-cache -fv`
+4. check the fonts correctly installed: `fc-list | grep 'FontAwesome'`
 
 License
 -------
