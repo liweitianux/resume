@@ -77,7 +77,7 @@ then execute `fc-cache -f` to refresh the font cache, done.
 
 Take the *Font Awesome* font family as an example:
 
-1. `mkdir ~/.local/share/fonts/FontAwesome`
+1. `mkdir -p ~/.local/share/fonts/FontAwesome`
 2. `cp <font-awesome-otf-files> ~/.local/share/fonts/FontAwesome/`
 3. `fc-cache -fv`
 4. check the fonts correctly installed: `fc-list | grep 'FontAwesome'`
