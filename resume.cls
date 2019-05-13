@@ -321,7 +321,7 @@
   }
     \user{\@firstname}{\@lastname}
     \ifdef{\@tagline}{%
-      \smallskip \\
+      \medskip \\
       \ifdef{\@taglineicon}{%
         \resumetitle{\icon{\@taglineicon}\@tagline}
       }{%
