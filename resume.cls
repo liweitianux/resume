@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2019/05/14 v2.4.3 Resume Class]
+\ProvidesClass{resume}[2019/05/14 v2.4.4 Resume Class]
 \LoadClass{article}
 
 %%
@@ -231,15 +231,15 @@
 %% Header
 %%
 
-% Render a text with its symbol
-% Usage; \socialtext{<icon>}{<label>}
-\newcommand*{\socialtext}[2]{%
+% Render a text with its icon
+% Usage: \icontext{<icon>}{<label>}
+\newcommand*{\icontext}[2]{%
   \mbox{\icon{#1} #2 \hspace{1em}}%
 }
 
-% Render a link with its symbol
-% Usage; \sociallink{<icon>}{<label>}
-\newcommand*{\sociallink}[3]{%
+% Render a link with its icon and text
+% Usage: \iconlink{<icon>}{<label>}{<text>}
+\newcommand*{\iconlink}[3]{%
   \mbox{\icon{#1} \link{#2}{#3} \hspace{1em}}%
 }
 
@@ -256,37 +256,37 @@
 \newcommand{\photo}[2]{\def\@photo{#2}\def\@photodiameter{#1}}
 
 % Address
-\newcommand*{\address}[1]{\socialtext{\locationSymbol}{#1}}
+\newcommand*{\address}[1]{\icontext{\locationSymbol}{#1}}
 % Birthday
-\newcommand*{\birthday}[1]{\socialtext{\birthdaySymbol}{#1}}
+\newcommand*{\birthday}[1]{\icontext{\birthdaySymbol}{#1}}
 % Place of birth
-\newcommand*{\home}[1]{\socialtext{\homeSymbol}{#1}}
+\newcommand*{\home}[1]{\icontext{\homeSymbol}{#1}}
 % Information
-\newcommand*{\info}[1]{\socialtext{\infoSymbol}{#1}}
+\newcommand*{\info}[1]{\icontext{\infoSymbol}{#1}}
 % Mobile phone
-\newcommand*{\mobile}[1]{\socialtext{\mobileSymbol}{#1}}
+\newcommand*{\mobile}[1]{\icontext{\mobileSymbol}{#1}}
 % Phone
-\newcommand*{\phone}[1]{\socialtext{\phoneSymbol}{#1}}
+\newcommand*{\phone}[1]{\icontext{\phoneSymbol}{#1}}
 % Degree
-\newcommand*{\degree}[1]{\socialtext{\degreeSymbol}{#1}}
+\newcommand*{\degree}[1]{\icontext{\degreeSymbol}{#1}}
 % University
-\newcommand*{\university}[1]{\socialtext{\universitySymbol}{#1}}
+\newcommand*{\university}[1]{\icontext{\universitySymbol}{#1}}
 
 % LinkedIn: \linkedin{<username>}
 \newcommand*{\linkedin}[1]{%
-  \sociallink{\linkedinSymbol}%
+  \iconlink{\linkedinSymbol}%
     {http://www.linkedin.com/in/#1}%
     {linkedin.com/in/#1}%
 }
 % GitHub: \github{<username>}
 \newcommand*{\github}[1]{%
-  \sociallink{\githubSymbol}%
+  \iconlink{\githubSymbol}%
     {https://github.com/#1}%
     {\texttt{github.com/#1}}%
 }
 % Email address
 \newcommand*{\email}[1]{%
-  \sociallink{\mailSymbol}{mailto:#1}{\texttt{#1}}
+  \iconlink{\mailSymbol}{mailto:#1}{\texttt{#1}}
 }
 
 % Render the tagline
