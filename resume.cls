@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2019/01/06 v2.4.1 Resume Class]
+\ProvidesClass{resume}[2019/05/14 v2.4.2 Resume Class]
 \LoadClass{article}
 
 %%
@@ -247,7 +247,6 @@
 \newcommand*{\name}[2]{\def\@firstname{#1}\def\@lastname{#2}}
 % Tag line
 \newcommand*{\tagline}[1]{\def\@tagline{#1}}
-\newcommand*{\taglineicon}[1]{\def\@taglineicon{#1}}
 % Keywords
 \newcommand*{\keywords}[1]{\def\@keywords{#1}}
 % File information
@@ -322,11 +321,7 @@
     \user{\@firstname}{\@lastname}
     \ifdef{\@tagline}{%
       \medskip \\
-      \ifdef{\@taglineicon}{%
-        \resumetitle{\icon{\@taglineicon}\@tagline}
-      }{%
-        \resumetitle{\@tagline}
-      }
+      \resumetitle{\@tagline}
     }{}
     \smallskip \\
     \@socialinfo
