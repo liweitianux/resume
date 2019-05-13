@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2019/05/14 v2.4.2 Resume Class]
+\ProvidesClass{resume}[2019/05/14 v2.4.3 Resume Class]
 \LoadClass{article}
 
 %%
@@ -301,8 +301,8 @@
       {{\LARGE\bfseries #1 \textsc{#2}}}%
 }}
 
-% Define social entries to print in header
-\newcommand*{\socialinfo}[1]{\def\@socialinfo{#1}}
+% Define the profile to show in the header
+\newcommand*{\profile}[1]{\def\@profile{#1}}
 
 % Render resume header
 \newcommand*{\makeheader}{
@@ -324,7 +324,7 @@
       \resumetitle{\@tagline}
     }{}
     \smallskip \\
-    \@socialinfo
+    \@profile
   \end{minipage}
   \smallskip
 }
