@@ -28,7 +28,7 @@ package, which can be installed with `pip3 install --user PyYAML`
 or `sudo apt install python3-yaml`.
 
 A pre-generated style file [`fontawesome5.sty`](fontawesome5/fontawesome5.sty)
-(matches Font Awesome **v5.2.0**) is also provided.
+(matches Font Awesome **v5.10.1**) is also provided.
 
 The Font Awesome fonts are designed by the
 [Font Awesome project](https://fontawesome.com/)
