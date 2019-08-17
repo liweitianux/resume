@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2019/05/14 v2.4.4 Resume Class]
+\ProvidesClass{resume}[2019/08/17 v2.4.5 Resume Class]
 \LoadClass{article}
 
 %%
@@ -94,7 +94,6 @@
 
 % Chinese setup
 \ifdef{\@zh}{
-  \xeCJKsetup{PunctStyle=kaiming}
   \setCJKmainfont{Source Han Serif SC}
 }{}
 
