@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2019/08/17 v2.4.6 Resume Class]
+\ProvidesClass{resume}[2019/08/17 v2.4.7 Resume Class]
 \LoadClass{article}
 
 %%
@@ -324,10 +324,9 @@
       \medskip \\
       \resumetitle{\@tagline}
     }{}
-    \smallskip \\
+    \medskip \\
     \@profile
   \end{minipage}
-  \smallskip
 }
 
 %%
