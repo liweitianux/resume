@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2019/08/17 v2.4.5 Resume Class]
+\ProvidesClass{resume}[2019/08/17 v2.4.6 Resume Class]
 \LoadClass{article}
 
 %%
@@ -175,15 +175,17 @@
 }
 
 \newcommand*{\githublink}[2]{%
-  \href{http://github.com/#1/#2}%
-  {\githubSymbol{} #1/#2}%
+  \href{http://github.com/#1/#2}{\githubSymbol{} #1/#2}%
 }
 
 \newcommand*{\link}[2]{\textcolor{linkcolor}{\href{#1}{#2}}}
 
+\def\@iconsize{\normalsize}
+\newcommand*{\iconsize}[1]{\def\@iconsize{#1}}
+
 \newcommand*{\icon}[1]{%
-  \makebox[1em][c]{\textcolor{symbolcolor}{#1}}%
-  \hspace{0.2em}%
+  {\@iconsize\makebox[1em][c]{\textcolor{symbolcolor}{#1}}}%
+  \hspace{0.2em}\strut%
 }
 
 % Test whether the command argument is given and is not empty
