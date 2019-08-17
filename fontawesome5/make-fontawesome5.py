@@ -28,7 +28,7 @@ from datetime import datetime
 import yaml
 
 FA_URL = "https://github.com/FortAwesome/Font-Awesome"
-ICONS_URL = FA_URL + "/raw/master/advanced-options/metadata/icons.yml"
+ICONS_URL = FA_URL + "/raw/master/metadata/icons.yml"
 ALLOWED_CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 # Fonts styles
