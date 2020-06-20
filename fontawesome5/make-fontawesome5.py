@@ -28,7 +28,7 @@ from datetime import datetime
 import yaml
 
 FA_URL = "https://github.com/FortAwesome/Font-Awesome"
-ICONS_URL = FA_URL + "/raw/master/metadata/icons.yml"
+ICONS_URL = FA_URL + "/raw/master/metadata/icons.yml"  # NOTE: 'raw' is correct
 ALLOWED_CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 # Fonts styles
@@ -190,7 +190,7 @@ def main():
         data = get_icons_yml()
 
     print("Loading icons data ...")
-    icons = yaml.load(data)
+    icons = yaml.safe_load(data)
     icon_list = sorted(icons.keys())
     print("Number of icons: %d" % len(icon_list))
 
