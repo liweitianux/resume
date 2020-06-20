@@ -15,6 +15,24 @@ by Christophe Roger, which is further based on the
 [Plasmati Graduate CV](https://www.latextemplates.com/template/plasmati-graduate-cv)
 by Alessandro Plasmati.
 
+Usage
+-----
+1. Install XeLaTeX, latexmk, GNU Make, and GhostScript packages;
+2. Install [Font Awesome 5](#font-awesome-5) and
+   other [required fonts](#required-fonts);
+3. Replace `resume-zh.tex` and `resume-en.tex` with your versions;
+4. Compile to PDFs with a simple `make` :-)
+
+**NOTE**:
+The `TEXINPUTS` environment variable is set in the [Makefile](Makefile#L10)
+so that XeLaTeX can find the `resume.cls` template and `fontawesome5.sty`
+package.  If you don't or can't use this `Makefile`, e.g., on Windows,
+then you need to appropriately configure your environment.
+
+**NOTE**:
+I use Windows only a bit, so I don't have a guide to use this template on
+Windows.  I'm glad to accept suggestions and updates.
+
 Font Awesome 5
 --------------
 I wrote a simple tool [`make-fontawesome5.py`](fontawesome5/make-fontawesome5.py),
@@ -67,7 +85,9 @@ opensource fonts:
   ExtraLight, Light, Regular, Medium, SemiBold, Bold, Heavy.
 
 Of course, you can use the fonts you prefer by modifying the template directly.
-However, you may need to tweak the column width accordingly.
+However, you may need to tweak the
+[column width in the template](resume.cls#L158)
+accordingly.
 
 Fonts Installation
 ------------------
