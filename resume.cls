@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2019/08/17 v2.4.7 Resume Class]
+\ProvidesClass{resume}[2020/06/21 v2.4.8 Resume Class]
 \LoadClass{article}
 
 %%
@@ -49,10 +49,10 @@
 \RequirePackage[skins]{tcolorbox}  % required by tikz to make the header
 \RequirePackage{csquotes}
 \RequirePackage[normalem]{ulem}
-\RequirePackage{microtype}
 \ifdef{\@zh}{
   \RequirePackage{xeCJK}
 }{}
+\RequirePackage{microtype}
 
 %
 % Hyperref
