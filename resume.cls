@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2020/06/21 v2.4.8 Resume Class]
+\ProvidesClass{resume}[2020/06/21 v2.4.9 Resume Class]
 \LoadClass{article}
 
 %%
@@ -95,6 +95,10 @@
 % Chinese setup
 \ifdef{\@zh}{
   \setCJKmainfont{Source Han Serif SC}
+  % Redefine '\emph' to bold style
+  % Credit: https://tex.stackexchange.com/a/227644
+  \let\emph\relax  % there's no \RedeclareTextFontCommand
+  \DeclareTextFontCommand{\emph}{\bfseries}
 }{}
 
 % Font Awesome icon aliases
