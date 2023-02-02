@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright (c) 2018 Weitian LI
+# Copyright (c) 2018,2023 Weitian LI
 # MIT License
 #
 
@@ -28,7 +28,7 @@ from datetime import datetime
 import yaml
 
 FA_URL = "https://github.com/FortAwesome/Font-Awesome"
-ICONS_URL = FA_URL + "/raw/master/metadata/icons.yml"  # NOTE: 'raw' is correct
+ICONS_URL = FA_URL + "/raw/5.x/metadata/icons.yml"  # NOTE: 'raw' is correct
 ALLOWED_CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 # Fonts styles
