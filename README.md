@@ -18,21 +18,16 @@ Usage
 * Linux
 
   1. Install XeLaTeX, latexmk, GNU Make, and GhostScript packages;
-  2. Install [Font Awesome 5](#font-awesome-5) and
-     other [required fonts](#required-fonts);
+  2. Install the [required fonts](#required-fonts);
   3. Replace `resume-zh.tex` and `resume-en.tex` with your versions;
   4. Compile to PDFs with a simple `make` :-)
 
 * Windows
 
   1. Install [MiKTeX](https://miktex.org/);
-  2. Install [Font Awesome 5](#font-awesome-5) and
-     other [required fonts](#required-fonts);
-  3. Copy `fontawesome5/fontawesome5.sty` to the current directory
-     (i.e., the same directory as `resume.cls` and `resume-*.tex`)
-     so that it can be auto found;
-  4. Replace `resume-zh.tex` and `resume-en.tex` with your versions;
-  5. Open `resume-*.tex` in TeXWorks, choose `XeLaTeX` to compile,
+  2. Install the [required fonts](#required-fonts);
+  3. Replace `resume-zh.tex` and `resume-en.tex` with your versions;
+  4. Open `resume-*.tex` in TeXWorks, choose `XeLaTeX` to compile,
      and confirm the prompts to install the missing packages along
      the run.
 
