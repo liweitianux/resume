@@ -1,8 +1,6 @@
 My Resume and LaTeX Template
 ============================
 
-**Weitian LI** `<wt@liwt.net>`
-
 Introduction
 ------------
 This repository holds my [resume](resume-zh+en.pdf) (Chinese and English),
@@ -17,21 +15,26 @@ by Alessandro Plasmati.
 
 Usage
 -----
-1. Install XeLaTeX, latexmk, GNU Make, and GhostScript packages;
-2. Install [Font Awesome 5](#font-awesome-5) and
-   other [required fonts](#required-fonts);
-3. Replace `resume-zh.tex` and `resume-en.tex` with your versions;
-4. Compile to PDFs with a simple `make` :-)
+* Linux
 
-**NOTE**:
-The `TEXINPUTS` environment variable is set in the [Makefile](Makefile#L10)
-so that XeLaTeX can find the `resume.cls` template and `fontawesome5.sty`
-package.  If you don't or can't use this `Makefile`, e.g., on Windows,
-then you need to appropriately configure your environment.
+  1. Install XeLaTeX, latexmk, GNU Make, and GhostScript packages;
+  2. Install [Font Awesome 5](#font-awesome-5) and
+     other [required fonts](#required-fonts);
+  3. Replace `resume-zh.tex` and `resume-en.tex` with your versions;
+  4. Compile to PDFs with a simple `make` :-)
 
-**NOTE**:
-I use Windows only a bit, so I don't have a guide to use this template on
-Windows.  I'm glad to accept suggestions and updates.
+* Windows
+
+  1. Install [MiKTeX](https://miktex.org/);
+  2. Install [Font Awesome 5](#font-awesome-5) and
+     other [required fonts](#required-fonts);
+  3. Copy `fontawesome5/fontawesome5.sty` to the current directory
+     (i.e., the same directory as `resume.cls` and `resume-*.tex`)
+     so that it can be auto found;
+  4. Replace `resume-zh.tex` and `resume-en.tex` with your versions;
+  5. Open `resume-*.tex` in TeXWorks, choose `XeLaTeX` to compile,
+     and confirm the prompts to install the missing packages along
+     the run.
 
 Font Awesome 5
 --------------
