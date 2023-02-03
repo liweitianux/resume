@@ -79,10 +79,10 @@ opensource fonts:
 
 * [Source Han Serif](https://github.com/adobe-fonts/source-han-serif)
 
-  The OTF font files for *Simplified Chinese* can be downloaded from
-  [here](https://github.com/adobe-fonts/source-han-serif/tree/release/OTF/SimplifiedChinese).
-  Just download all the weight variants:
-  ExtraLight, Light, Regular, Medium, SemiBold, Bold, Heavy.
+  Download the `SourceHanSerifSC.zip` archive
+  (Language Specific OTFs Simplified Chinese) from the
+  [releases](https://github.com/adobe-fonts/source-han-serif/releases) page,
+  and then install all of them.
 
 Of course, you can use the fonts you prefer by modifying the template directly.
 However, you may need to tweak the
