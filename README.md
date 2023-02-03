@@ -41,6 +41,7 @@ The original [fontawesome5](fontawesome5/) contents are now obsolete but kept
 for reference.
 
 <blockquote>
+
 I wrote a simple tool [`make-fontawesome5.py`](fontawesome5/make-fontawesome5.py),
 which will download the latest icon list from the
 [Font Awesome](https://github.com/FortAwesome/Font-Awesome) project
@@ -70,6 +71,7 @@ i.e., the following 3 OTF files are needed:
 * `Font Awesome 5 Free-Regular-400.otf`
 * `Font Awesome 5 Free-Solid-900.otf`
 * `Font Awesome 5 Brands-Regular-400.otf`
+
 </blockquote>
 
 ### Installation
