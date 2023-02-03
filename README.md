@@ -77,6 +77,22 @@ i.e., the following 3 OTF files are needed:
 * `Font Awesome 5 Brands-Regular-400.otf`
 </blockquote>
 
+### Installation
+
+* Linux (Debian 12/bookworm)
+
+  - Method 1: Install the `texlive-fonts-extra` package, but it pulls off
+    lots of fonts and costs ~1.6GB disk space!
+  - Method 2: Manually install the `fontawesome5` package to `~/texmf`
+    with the `tlmgr` (TeX Live Manager) tool:
+    (1) initialize the user tree: `tlmgr --usermode init-usertree`;
+    (2) install the package: `tlmgr --usermode install fontawesome5`.
+
+* Windows (MiKTeX 22.10)
+
+  MiKTeX will auto prompt for the missing package, so just confirm to
+  install it.
+
 Required Fonts
 --------------
 Besides the Font Awesome fonts, this template also requires the following
