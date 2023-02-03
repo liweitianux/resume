@@ -6,9 +6,6 @@ PDFCAT:= resume-zh+en.pdf
 DATE= $(shell date +%Y%m%d)
 DISTDIR= resume.$(DATE)
 
-# Environment variables
-TEXINPUTS:= .:fontawesome5:$(TEXINPUTS)
-
 all: $(PDFCAT)
 en: resume-en.pdf
 zh: resume-zh.pdf
@@ -19,11 +16,8 @@ $(PDFCAT): $(PDFS)
 		-sOutputFile=$@ \
 		$(PDFS)
 
-resume-zh.pdf: resume-zh.tex $(DEPS)
-	env TEXINPUTS=$(TEXINPUTS) latexmk -xelatex $<
-
-resume-en.pdf: resume-en.tex $(DEPS)
-	env TEXINPUTS=$(TEXINPUTS) latexmk -xelatex $<
+%.pdf: %.tex $(DEPS)
+	latexmk -xelatex $<
 
 dist: all
 	mkdir $(DISTDIR)

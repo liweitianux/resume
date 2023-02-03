@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2020/06/21 v2.4.9 Resume Class]
+\ProvidesClass{resume}[2023/02/03 v2.5.0 Resume Class]
 \LoadClass{article}
 
 %%
@@ -110,7 +110,7 @@
 \newcommand*{\mailSymbol}{\faAt}
 \newcommand*{\mobileSymbol}{\faPhone}  % \faMobilePhone is too narrow
 \newcommand*{\linkedinSymbol}{\faLinkedin}
-\newcommand*{\locationSymbol}{\faMapMarkerAlt}
+\newcommand*{\locationSymbol}{\faMapMarker*}
 \newcommand*{\phoneSymbol}{\faPhone}
 \newcommand*{\universitySymbol}{\faUniversity}
 
@@ -507,7 +507,7 @@
   \textbf{#1} &
     \foreach \x in {1,...,5}{%
       \color{accentcolor!80}{%
-        \ifnumgreater{\x}{#2}{\faCircleNotched}{\faCircle}
+        \ifnumgreater{\x}{#2}{\faCircleNotch}{\faCircle}
       }
     } \enspace \\
 }
