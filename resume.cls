@@ -1,5 +1,5 @@
 %%
-%% Copyright (c) 2018-2019 Weitian LI
+%% Copyright (c) 2018-2023 Weitian LI
 %% Copyright (c) 2016 Christophe Roger
 %% The LaTeX Project Public License (LPPL) Version 1.3c
 %%
@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2023/02/03 v2.5.0 Resume Class]
+\ProvidesClass{resume}[2023/02/03 v2.5.1 Resume Class]
 \LoadClass{article}
 
 %%
@@ -94,7 +94,7 @@
 
 % Chinese setup
 \ifdef{\@zh}{
-  \setCJKmainfont{Source Han Serif SC}
+  \setCJKmainfont{Noto Serif CJK SC}
   % Redefine '\emph' to bold style
   % Credit: https://tex.stackexchange.com/a/227644
   \let\emph\relax  % there's no \RedeclareTextFontCommand

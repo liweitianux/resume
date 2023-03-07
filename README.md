@@ -101,12 +101,14 @@ opensource fonts:
   and then extract the `IBM-Plex-Serif` and `IBM-Plex-Mono` directories
   and install them.
 
-* [Source Han Serif](https://github.com/adobe-fonts/source-han-serif)
+* [Noto Serif CJK](https://github.com/notofonts/noto-cjk)
 
-  Download the `SourceHanSerifSC.zip` archive
+  Download the `NotoSerifCJKsc.zip` archive
   (Language Specific OTFs Simplified Chinese) from the
-  [releases](https://github.com/adobe-fonts/source-han-serif/releases) page,
+  [releases](https://github.com/notofonts/noto-cjk/releases) page,
   and then install all of them.
+
+On Debian Linux, simply do `apt install fonts-ibm-plex fonts-noto-cjk`.
 
 Of course, you can use the fonts you prefer by modifying the template directly.
 However, you may need to tweak the
