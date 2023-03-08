@@ -12,6 +12,10 @@ by Christophe Roger, which is further based on the
 [Plasmati Graduate CV](https://www.latextemplates.com/template/plasmati-graduate-cv)
 by Alessandro Plasmati.
 
+This template is also available on
+[Overleaf](https://www.overleaf.com/latex/templates/simple-resume-template-for-new-graduate-ying-jie-sheng-jian-li-mo-ban/hxrntvmmvnqt).
+Welcome to try it and report back.
+
 Usage
 -----
 * Linux
