@@ -1,4 +1,4 @@
-DEPS:= resume.cls fontawesome5/fontawesome5.sty
+DEPS:= resume.cls
 SRCS:= resume-zh.tex resume-en.tex
 PDFS:= $(SRCS:%.tex=%.pdf)
 PDFCAT:= resume-zh+en.pdf
