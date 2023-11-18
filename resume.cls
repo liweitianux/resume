@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2023/02/03 v2.5.1 Resume Class]
+\ProvidesClass{resume}[2023/11/18 v2.5.2 Resume Class]
 \LoadClass{article}
 
 %%
@@ -34,6 +34,7 @@
 ]{geometry}
 \RequirePackage{xparse}
 \RequirePackage{etoolbox}
+\RequirePackage{ifthen}
 \RequirePackage{fontspec}
 \RequirePackage{fontawesome5}
 \RequirePackage{parskip}  % auto adjust parskip and items skip
@@ -257,8 +258,13 @@
 % File information
 \newcommand*{\fileinfo}[1]{\def\@fileinfo{#1}}
 
-% Photo: \photo{<diameter>}{<photo>}
-\newcommand{\photo}[2]{\def\@photo{#2}\def\@photodiameter{#1}}
+% Photo: \photo[<shape>]{<width>}{<filename>}
+% Two shapes are supported: circle (default), square
+\NewDocumentCommand{\photo}{O{circle}mm}{
+  \def\@photoshape{#1}
+  \def\@photowidth{#2}
+  \def\@photofile{#3}
+}
 
 % Address
 \newcommand*{\address}[1]{\icontext{\locationSymbol}{#1}}
@@ -311,17 +317,22 @@
 
 % Render resume header
 \newcommand*{\makeheader}{
-  \ifdef{\@photodiameter}{
-    \begin{minipage}{\@photodiameter}
-      \tikz\path[fill overzoom image={\@photo}]
-        circle[radius=0.5\linewidth];
+  \ifdef{\@photowidth}{
+    \begin{minipage}{\@photowidth}
+      \ifthenelse{\equal{\@photoshape}{square}}{%
+        \tikz\path[fill overzoom image={\@photofile}]
+          rectangle (\linewidth, \linewidth);
+      }{%
+        \tikz\path[fill overzoom image={\@photofile}]
+          circle[radius=0.5\linewidth];
+      }
     \end{minipage}
     \hspace{1em}
   }{}
-  \ifundef{\@photodiameter}{%
+  \ifundef{\@photowidth}{%
     \begin{minipage}{\linewidth}
   }{%
-    \begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}
+    \begin{minipage}{\dimexpr\linewidth-\@photowidth-2em}
   }
     \user{\@firstname}{\@lastname}
     \ifdef{\@tagline}{%
