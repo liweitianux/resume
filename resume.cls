@@ -259,8 +259,8 @@
 \newcommand*{\fileinfo}[1]{\def\@fileinfo{#1}}
 
 % Photo: \photo[<shape>]{<width>}{<filename>}
-% Two shapes are supported: circle (default), square
-\NewDocumentCommand{\photo}{O{circle}mm}{
+% Two shapes are supported: circular (default), square
+\NewDocumentCommand{\photo}{O{circular}mm}{
   \def\@photoshape{#1}
   \def\@photowidth{#2}
   \def\@photofile{#3}
