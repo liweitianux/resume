@@ -13,21 +13,21 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: install deps
-      # texlive-plain-generic -> ulem.sty
-      # texlive-lang-chinese -> ctex*
+      # texlive-lang-cjk -> xeCJK.sty
+      # texlive-lang-chinese -> ctexhook.sty
       # texlive-fonts-recommended -> pzdr.tfm (required by mktextfm pzdr)
       run: |
-        sudo apt update
-        sudo apt install --no-install-recommends make ghostscript
-        sudo apt install --no-install-recommends fonts-ibm-plex fonts-noto-cjk
-        sudo apt install --no-install-recommends latexmk texlive-xetex
-        sudo apt install --no-install-recommends texlive-plain-generic texlive-lang-chinese texlive-fonts-recommended
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends make ghostscript
+        sudo apt-get install -y --no-install-recommends latexmk texlive-xetex
+        sudo apt-get install -y --no-install-recommends texlive-lang-cjk texlive-lang-chinese
+        sudo apt-get install -y --no-install-recommends fonts-ibm-plex fonts-noto-cjk texlive-fonts-recommended
     - name: install fontawesome5
       # the shipped texlive is 2021 and is older than the remote (currently 2023),
       # so need to manually download the package and install it.
       run: |
-        sudo apt install --no-install-recommends wget xz-utils
-        wget https://mirror.ctan.org/systems/texlive/tlnet/archive/fontawesome5.tar.xz
+        sudo apt-get install -y --no-install-recommends wget xz-utils
+        wget --no-check-certificate https://mirror.ctan.org/systems/texlive/tlnet/archive/fontawesome5.tar.xz
         tlmgr --usermode init-usertree
         tlmgr --usermode install --file fontawesome5.tar.xz
     - name: build pdfs
