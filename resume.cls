@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2023/11/18 v2.5.2 Resume Class]
+\ProvidesClass{resume}[2024/03/13 v2.5.3 Resume Class]
 \LoadClass{article}
 
 %%
@@ -49,7 +49,6 @@
 \RequirePackage{tikz}
 \RequirePackage[skins]{tcolorbox}  % required by tikz to make the header
 \RequirePackage{csquotes}
-\RequirePackage[normalem]{ulem}
 \ifdef{\@zh}{
   \RequirePackage{xeCJK}
 }{}
