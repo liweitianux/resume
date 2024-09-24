@@ -4,6 +4,8 @@
 *.log
 *.out
 *.xdv
+*.synctex(busy)
+*.synctex.gz
 auto/
 photos/
 photo.*

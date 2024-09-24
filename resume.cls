@@ -1,10 +1,17 @@
 %%
+%% Copyright (c) 2024 Chengyang Qian
 %% Copyright (c) 2018-2023 Weitian LI
 %% Copyright (c) 2016 Christophe Roger
 %% The LaTeX Project Public License (LPPL) Version 1.3c
 %%
 %% Resume LaTeX template.
+%% Repository:
+%%     Resume of Chengyang Qian
+%%     https://github.com/qiancy98/resume
 %% Based on
+%%     Resume of Weitian LI
+%%     https://github.com/liweitianux/resume
+%% which is further based on
 %%     YACC: Another Awesome CV by Christophe Roger
 %%     https://github.com/darwiin/yaac-another-awesome-cv
 %% which is further based on
@@ -12,15 +19,17 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2024/03/13 v2.5.3 Resume Class]
+\ProvidesClass{resume}[2024/09/24 v2.5.4 Resume Class]
 \LoadClass{article}
 
 %%
 %% Class options
 %%
 
-\DeclareOption{monochrome}{\def\@monochrome{true}}
-\DeclareOption{zh}{\def\@zh{true}}
+\newif\if@monochrome
+\newif\if@zh
+\DeclareOption{monochrome}{\@monochrometrue}
+\DeclareOption{zh}{\@zhtrue}
 \ProcessOptions\relax
 
 %%
@@ -49,9 +58,9 @@
 \RequirePackage{tikz}
 \RequirePackage[skins]{tcolorbox}  % required by tikz to make the header
 \RequirePackage{csquotes}
-\ifdef{\@zh}{
+\if@zh
   \RequirePackage{xeCJK}
-}{}
+\fi
 \RequirePackage{microtype}
 
 %
@@ -62,23 +71,13 @@
 \AtBeginDocument{%
   \hypersetup{%
     pdfborder={0 0 0},% No border around links
-    pdfauthor={%
-      \ifdef{\@zh}{%
-        \@lastname{} \@firstname%
-      }{%
-        \@firstname{} \@lastname%
-      }%
-    },%
+    pdfauthor={@name},%
     pdftitle={%
-      \ifdef{\@zh}{%
-        简历 | \@lastname{} \@firstname{}
-        \ifdef{\@tagline}{| \@tagline}{}%
-      }{%
-        Resume | \@firstname{} \@lastname{}
-        \ifdef{\@tagline}{| \@tagline}{}%
-      }%
+      \if@zh 简历 \else Resume \fi%
+      | \@name%
+      \ifdef{\@tagline}{ | \@tagline}{}%
     },%
-    pdfkeywords={\ifdef{\@keywords}{\@keywords}{}},%
+    pdfkeywords={\@keywords},%
   }%
 }
 \RequirePackage{hyperref}
@@ -93,13 +92,13 @@
 \setmonofont{IBM Plex Mono}
 
 % Chinese setup
-\ifdef{\@zh}{
+\if@zh
   \setCJKmainfont{Noto Serif CJK SC}
   % Redefine '\emph' to bold style
   % Credit: https://tex.stackexchange.com/a/227644
   \let\emph\relax  % there's no \RedeclareTextFontCommand
   \DeclareTextFontCommand{\emph}{\bfseries}
-}{}
+\fi
 
 % Font Awesome icon aliases
 \newcommand*{\birthdaySymbol}{\faBirthdayCake}
@@ -115,9 +114,11 @@
 \newcommand*{\universitySymbol}{\faUniversity}
 
 % Color setup
-\ifdef{\@monochrome}%
-  {\definecolor{basecolor}{HTML}{000000}}%
-  {\definecolor{basecolor}{HTML}{000066}}  % blue
+\if@monochrome
+  \definecolor{basecolor}{HTML}{000000}
+\else
+  \definecolor{basecolor}{HTML}{000066}  % blue
+\fi
 %
 \definecolor{darkGrey}{HTML}{989898}
 %
@@ -144,12 +145,11 @@
 % No paragraph indentation
 \setlength{\parindent}{0em}
 
-% Line spacing
-\ifdef{\@zh}{
+\if@zh
   \linespread{1.25}
-}{
+\else
   \linespread{1.15}
-}
+\fi
 
 % Setup resume sections
 \titleformat{\section}{\Large\raggedright}{}{0.2em}{}[\titlerule]
@@ -162,11 +162,11 @@
 % Width of the left column for date ranges
 \newlength{\leftcolwidth}
 \newlength{\rightcolwidth}
-\ifdef{\@zh}{%
+\if@zh
   \setlength{\leftcolwidth}{6em}
-}{
+\else
   \setlength{\leftcolwidth}{8.1em}
-}
+\fi
 \setlength{\rightcolwidth}{\dimexpr \textwidth - \leftcolwidth - 4\tabcolsep}
 
 %%
@@ -224,15 +224,6 @@
 }
 
 %%
-%% Position and location
-%%
-
-\newcommand*{\setposition}[1]{\def\@position{#1}}
-\newcommand*{\getposition}{\@position}
-\newcommand*{\setlocation}[1]{\def\@location{#1}}
-\newcommand*{\getlocation}{\@location}
-
-%%
 %% Header
 %%
 
@@ -249,20 +240,41 @@
 }
 
 % Name: \name{<firstname>}{<lastname>}
-\newcommand*{\name}[2]{\def\@firstname{#1}\def\@lastname{#2}}
+\newcommand*{\name}[2]{%
+  \if@zh
+    \def\@name{#2#1}% Chinese
+  \else
+    \def\@name{\texorpdfstring{#1 \textsc{#2}}{#1 #2}}% English
+  \fi
+}
 % Tag line
 \newcommand*{\tagline}[1]{\def\@tagline{#1}}
 % Keywords
+\def\@keywords{}
 \newcommand*{\keywords}[1]{\def\@keywords{#1}}
 % File information
 \newcommand*{\fileinfo}[1]{\def\@fileinfo{#1}}
 
-% Photo: \photo[<shape>]{<width>}{<filename>}
-% Two shapes are supported: circular (default), square
-\NewDocumentCommand{\photo}{O{circular}mm}{
-  \def\@photoshape{#1}
-  \def\@photowidth{#2}
-  \def\@photofile{#3}
+% Photo: \photo{<width>}{<filename>}
+% Photo: \photo*{<width>}{<filename>}
+% Two shapes are supported: circular (default), square (* option)
+\NewDocumentCommand{\photo}{ s m m }{%
+\def\@photowidth{#2}
+  \def\@photo{%
+    \begin{tikzpicture}
+      \IfBooleanTF{#1}{%
+        \clip (-0.5\linewidth, -0.5\linewidth) rectangle (0.5\linewidth, 0.5\linewidth);
+      }{%
+        \clip (0, 0) circle (0.5\linewidth);
+      }
+      \node at (0, -0.1\linewidth) {\includegraphics[width=\linewidth]{#3}};
+    \end{tikzpicture}%
+  }
+}
+
+% abstract
+\renewcommand*{\abstract}[1]{%
+  \def\@abstract{#1}
 }
 
 % Address
@@ -303,37 +315,18 @@
 \newcommand*{\resumetitle}[1]{%
   \color{accentcolor}{\textbf{\large{#1}}}
 }
-% Render the name: \user{<firstanme>}{<lastname>}
-\newcommand*{\user}[2]{%
-  \color{accentcolor}{%
-    \ifdef{\@zh}%
-      {{\LARGE\bfseries #2 #1}}%
-      {{\LARGE\bfseries #1 \textsc{#2}}}%
-}}
 
 % Define the profile to show in the header
 \newcommand*{\profile}[1]{\def\@profile{#1}}
 
 % Render resume header
 \newcommand*{\makeheader}{
-  \ifdef{\@photowidth}{
-    \begin{minipage}{\@photowidth}
-      \ifthenelse{\equal{\@photoshape}{square}}{%
-        \tikz\path[fill overzoom image={\@photofile}]
-          rectangle (\linewidth, \linewidth);
-      }{%
-        \tikz\path[fill overzoom image={\@photofile}]
-          circle[radius=0.5\linewidth];
-      }
-    \end{minipage}
-    \hspace{1em}
-  }{}
   \ifundef{\@photowidth}{%
     \begin{minipage}{\linewidth}
   }{%
     \begin{minipage}{\dimexpr\linewidth-\@photowidth-2em}
   }
-    \user{\@firstname}{\@lastname}
+    \color{accentcolor}{\LARGE\bfseries\@name}
     \ifdef{\@tagline}{%
       \medskip \\
       \resumetitle{\@tagline}
@@ -341,6 +334,16 @@
     \medskip \\
     \@profile
   \end{minipage}
+  \ifdef{\@photowidth}{
+    \hfill
+    \begin{minipage}{\@photowidth}
+      \@photo
+    \end{minipage}
+  }{}
+  \par
+  \ifdef{\@abstract}{
+    \onehalfspacing\hspace{2em}\@abstract\par
+  }{}
 }
 
 %%
@@ -417,13 +420,13 @@
 %   {<major>}       % #5
 %   {<degree>}      % #6
 \NewDocumentCommand{\education}{m o m m m m}{
-  \ifdef{\@zh}{%
+  \if@zh
     \IfValueTF{#2}{#2}{现在} & \textbf{#3} \textbullet #4 \\*
     #1 & #5 \textbullet #6 \\
-  }{%
+  \else
     \IfValueTF{#2}{#2}{present} & #4, \textbf{#3} \\*
     #1 & #6 in #5 \\
-  }
+  \fi
 }
 
 %%
@@ -446,14 +449,14 @@
 %   [<tags>]         % #7
 \NewDocumentCommand{\project}{m o m m m m o}{
   \multirowcell{2}[0ex][r]{%
-    \IfValueTF{#2}{#2}{\ifdef{\@zh}{现在}{present}} \\ #1%
+    \IfValueTF{#2}{#2}{\if@zh 现在\else present\fi} \\ #1%
   }
   & \textbf{#5} \\*
-  \ifdef{\@zh}{%
+  \if@zh
     & #3 \textbullet #4 \\*
-  }{%
+  \else
     & #4, #3 \\*
-  }
+  \fi
   & \begin{minipage}[t]{\rightcolwidth} #6 \end{minipage} \\*
   \IfValueT{#7}{%
     & \footnotesize{\tags{#7}} \\

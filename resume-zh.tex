@@ -1,8 +1,10 @@
 %%
 %% Copyright (c) 2018-2019 Weitian LI <wt@liwt.net>
+%% Copyright (c) 2024-2025 Chengyang Qian <mike98@sjtu.edu.cn>
 %% CC BY 4.0 License
 %%
 %% Created: 2018-04-11
+%% Updated: 2024-09-24
 %%
 
 % Chinese version
@@ -13,73 +15,62 @@
 
 % File information shown at the footer of the last page
 \fileinfo{%
-  \faCopyright{} 2018--2020, Weitian LI \hspace{0.5em}
+  \faCopyright{} 2024--2024, Chengyang Qian \hspace{0.5em}
   \creativecommons{by}{4.0} \hspace{0.5em}
-  \githublink{liweitianux}{resume} \hspace{0.5em}
+  \githublink{qiancy98}{resume} \hspace{0.5em}
   \faEdit{} \today
 }
 
-\name{维天}{李}
-
-\keywords{BSD, Linux, Programming, Python, C, Shell, DevOps, SysAdmin}
-
-% \tagline{\icon{\faBinoculars}} <position-to-look-for>}
-% \tagline{<current-position>}
-
-% Supported shapes: circular (default), square
-% \photo[<shape>]{<width>}{<filename>}
+\name{某某}{钱}
+\keywords{数学, 编程, 算法}
 
 \profile{
-  \mobile{132-6262-0332}
-  \email{liweitianux@live.com}
-  \github{liweitianux} \\
-  \university{上海交通大学}
-  \degree{物理学 \textbullet 博士}
-  \birthday{1991-09-26}
-  \address{上海}
+  \mobile{[电话号码]}
+  \email{[电子邮件]}
+  \github{[GitHub用户名]} \\
+  \university{某大学}
+  \degree{数学 \textbullet 博士}
+  \birthday{[出生日期]}
+  \address{[地址]}
   % Custom information:
-  % \icontext{<icon>}{<text>}
+  \icontext{\faBinoculars}{意向职位}
   % \iconlink{<icon>}{<link>}{<text>}
 }
+% \photo{25mm}{self.jpg}
+
+\abstract{
+  我是上海交通大学数学专业的博士研究生，拥有扎实的数学理论基础和出色的问题解决能力。blablabla
+}
+
+
 
 \begin{document}
 \makeheader
 
 %======================================================================
-% Summary & Objectives
-%======================================================================
-{\onehalfspacing\hspace{2em}%
-物理学专业（射电天文方向）直博研究生，有扎实的物理、数学与统计学基础，
-擅长数据建模与分析，热衷计算机和网络技术，
-有 10 年的 Linux 和 BSD 使用经验，熟练掌握 Shell、Python 和 C 语言编程。
-积极实践自由开源精神，
-在 \link{https://github.com/liweitianux}{GitHub} 上分享多个项目，
-是 \link{https://www.dragonflybsd.org}{DragonFly BSD} 操作系统的开发者，
-并积极参与其他多个开源项目。
-\par}
-
-%======================================================================
-\sectionTitle{技能和语言}{\faWrench}
+\sectionTitle{专业技能}{\faWrench}
 %======================================================================
 \begin{competences}
-  \comptence{操作系统}{%
-    \icon{\faLinux} Linux （10 年），
-    \icon{\faFreebsd} DragonFly BSD \& FreeBSD （7 年）
+  \comptence{\icon{\faCode}编程}{%
+    Python, C++
   }
-  \comptence{编程}{%
-    Python, C, Shell, R, Tcl/Tk
+  \comptence{\icon{\faLinux}工具}{%
+    SSH, Git
   }
-  \comptence{工具}{%
-    SSH, Git, Make, Tmux, Vi, Ansible
+  \comptence{\icon{\faGlobe}网页}{%
+    markdown
   }
-  \comptence{数据分析}{%
-    R, Pandas; Matplotlib, ggplot2; Keras, Scikit-learn
+  \comptence{\icon{\faFileCode}算法}{%
+    相关经验
   }
-  \comptence{网站开发}{%
-    Flask, JavaScript, jQuery, Bootstrap
+  \comptence{\icon{\faDollarSign}金融}{%
+    相关经验
   }
-  \comptence{\icon{\faLanguage} 语言}{
-    \textbf{英语} --- 读写（优良），听说（日常交流）
+  \comptence{\icon{\faChartLine}概统}{%
+    相关经验
+  }
+  \comptence{\icon{\faLanguage}语言}{
+    英语四六级证书, 普通话二级乙等
   }
 \end{competences}
 
@@ -88,105 +79,45 @@
 %======================================================================
 \begin{educations}
   \education%
-    {2013.09}%
-    [2019.09]%
-    {上海交通大学}%
-    {物理与天文学院}%
-    {物理学}%
+    {2019.09}% 起始时间
+    [2025.06]% 结束时间
+    {某大学}% 学校名称
+    {某学院}% 学院名称
+    {数学}% 专业名称
     {博士}
 
   \separator{0.5ex}
   \education%
-    {2009.09}%
-    [2013.06]%
-    {上海交通大学}%
-    {物理与天文系}%
-    {应用物理学}%
+    {2015.09}% 起始时间
+    [2019.06]% 结束时间
+    {某大学}% 学校名称
+    {某学院}% 学院名称
+    {数学与应用数学}% 专业名称
     {学士}
 \end{educations}
 
 %======================================================================
-\sectionTitle{计算机技能}{\faCogs}
+\sectionTitle{获奖荣誉}{\faTrophy}
 %======================================================================
 \begin{itemize}
-  \item DragonFly BSD 操作系统开发者：
-    200+ 代码提交；内核以及系统工具；
-    在邮件列表和 IRC 频道交流和回答问题
-  \item 使用 Ansible 管理 VPS，部署个人域名邮箱、权威 DNS、网站、Git、IRC 等服务
-  \item 搭建并管理课题组的工作站、计算集群（4 节点）和网络设备
-  \item 参与配置和测试上海天文台的 SKA 高性能计算集群原型机
-    （1 管理节点 + 1 存储节点 + 4 计算节点）
-  \item 设计并开发了\enquote{2014 第一届中国—新西兰联合 SKA 暑期学校}的整个网站
-    （Django, Bootstrap, jQuery）
+  \item 某年某奖学金
+  \item 某年某荣誉
 \end{itemize}
 
 %======================================================================
-\sectionTitle{个人项目}{\faCode}
+\sectionTitle{科研经历}{\faAtom}
 %======================================================================
 \begin{itemize}
-  \item \link{https://github.com/liweitianux/atoolbox}{\texttt{atoolbox}}:
-    (Python, Shell)
-    多年来累积的各种工具，帮助管理系统、执行常用任务、分析天文数据等
-  \item \link{https://github.com/liweitianux/dfly-update}{\texttt{dfly-update}}:
-    (Shell)
-    DragonFly BSD 系统更新程序
-  \item \link{https://github.com/liweitianux/openrcs}{\texttt{openrcs}}:
-    (C)
-    改进 \texttt{OpenBSD RCS}，使其与 \texttt{GNU RCS} 足够兼容
-  \item \link{https://github.com/liweitianux/fg21sim}{\texttt{fg21sim}}:
-    (Python)
-    模拟低频射电天空图像
-  \item \link{https://github.com/liweitianux/cdae-eor}{\texttt{cdae-eor}}:
-    (Python, Keras)
-    使用卷积去噪自动编码器（CDAE）分离宇宙再电离（EoR）信号
-  \item \link{https://github.com/liweitianux/chandra-acis-analysis}{\texttt{chandra-acis-analysis}}:
-    (Python, Shell, Tcl)
-    X~射线天文观测数据的半自动化分析程序
-  \item \link{https://github.com/liweitianux/resume}{\texttt{resume}}:
-    (\LaTeX)
-    \emph{此简历}的模板和源文件
+	\item 某年某项目，项目描述
+	\item 某年某论文，论文描述
 \end{itemize}
 
 %======================================================================
-\sectionTitle{科研成果}{\faAtom}
+\sectionTitle{社团经历}{\faUsers}
 %======================================================================
 \begin{itemize}
-  \item 开发低频射电天空图像模拟软件：
-    \link{https://github.com/liweitianux/fg21sim}{\texttt{FG21sim}}
-  \item 开发程序实现~X~射线天文观测数据的半自动化分析：
-    \link{https://github.com/liweitianux/chandra-acis-analysis}{\texttt{chandra-acis-analysis}}
-  \item 利用卷积去噪自动编码器（CDAE）在频率维度分离微弱的宇宙再电离（EoR）信号
-  \item 利用卷积神经网络（CNN）对 FIRST 巡天的射电星系图像根据形态特征进行分类
-  \item 显著改进星系团射电晕的建模，并考虑低频干涉阵列的复杂仪器效应
-  \item 改进~X~射线光谱拟合的背景成分建模，获到更准确可靠的拟合结果
-  \item 发表 2 篇第一作者以及 8 篇合作者 SCI 论文
+	\item 某年某职务，社团名称
+	\item 某年某职务，社团名称
 \end{itemize}
-
-%======================================================================
-\sectionTitle{实习经历}{\faBriefcase}
-%======================================================================
-\begin{experiences}
-  \experience%
-    [2018.04]%
-    {2018.08}%
-    {数据工程师 @ 上海领脉网络科技（初创公司）}%
-    [\begin{itemize}
-      \item 从 Amazon 网页搜索并挖取商品与广告信息
-        （Python, Requests, BeautifulSoup）
-      \item 配置 Airflow 服务器和数据库等基础设施，
-        定期从 Amazon 获取产品销售与广告投放等数据
-      \item 开发网站（Flask, jQuery），帮助客户优化 Amazon 广告投放
-    \end{itemize}]
-
-  \separator{0.5ex}
-  \experience%
-    [2013.07]%
-    {2013.09}%
-    {网站开发 @ 97 随访（初创公司）}%
-    [\begin{itemize}
-      \item 后端开发（Django），完成用户注册、数据存储和搜索等功能
-      \item 前端开发（jQuery, AJAX），对患者各项指标随时间的变化进行可视化
-    \end{itemize}]
-\end{experiences}
 
 \end{document}
