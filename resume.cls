@@ -255,20 +255,29 @@
 % File information
 \newcommand*{\fileinfo}[1]{\def\@fileinfo{#1}}
 
-% Photo: \photo{<width>}{<filename>}
-% Photo: \photo*{<width>}{<filename>}
-% Two shapes are supported: circular (default), square (* option)
-\NewDocumentCommand{\photo}{ s m m }{%
-\def\@photowidth{#2}
+% Photo: \photo{<width>}{<filename>} : circular (default)
+% Photo: \photo*{<width>}{<filename>}: square
+% Photo: \photo+{<width>}{<filename>}: circular, photo on the right
+% Photo: \photo*+{<width>}{<filename>}: square, photo on the right
+\newif\if@photoOnRight
+\NewDocumentCommand{\photo}{ s t+ m m }{%
+  \def\@photowidth{#3}
+  \IfBooleanTF{#2}{%
+    \@photoOnRighttrue
+  }{%
+    \@photoOnRightfalse
+  }
   \def\@photo{%
-    \begin{tikzpicture}
-      \IfBooleanTF{#1}{%
-        \clip (-0.5\linewidth, -0.5\linewidth) rectangle (0.5\linewidth, 0.5\linewidth);
-      }{%
-        \clip (0, 0) circle (0.5\linewidth);
-      }
-      \node at (0, -0.1\linewidth) {\includegraphics[width=\linewidth]{#3}};
-    \end{tikzpicture}%
+    \begin{minipage}{#3}
+      \begin{tikzpicture}
+        \IfBooleanTF{#1}{%
+          \clip (-0.5\linewidth, -0.5\linewidth) rectangle (0.5\linewidth, 0.5\linewidth);
+        }{%
+          \clip (0, 0) circle (0.5\linewidth);
+        }
+        \node at (0, -0.1\linewidth) {\includegraphics[width=\linewidth]{#4}};
+      \end{tikzpicture}%
+    \end{minipage}
   }
 }
 
@@ -321,6 +330,7 @@
 
 % Render resume header
 \newcommand*{\makeheader}{
+  \ifdef{\@photowidth}{\if@photoOnRight\else\@photo \hspace{1em}\fi}{}
   \ifundef{\@photowidth}{%
     \begin{minipage}{\linewidth}
   }{%
@@ -334,12 +344,7 @@
     \medskip \\
     \@profile
   \end{minipage}
-  \ifdef{\@photowidth}{
-    \hfill
-    \begin{minipage}{\@photowidth}
-      \@photo
-    \end{minipage}
-  }{}
+  \ifdef{\@photowidth}{\if@photoOnRight\hfill \@photo\fi}{}%
   \par
   \ifdef{\@abstract}{
     \onehalfspacing\hspace{2em}\@abstract\par
