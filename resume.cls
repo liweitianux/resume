@@ -425,13 +425,16 @@
 %   {<major>}       % #5
 %   {<degree>}      % #6
 \NewDocumentCommand{\education}{m o m m m m}{
-  \if@zh
-    \IfValueTF{#2}{#2}{现在} & \textbf{#3} \textbullet #4 \\*
-    #1 & #5 \textbullet #6 \\
-  \else
-    \IfValueTF{#2}{#2}{present} & #4, \textbf{#3} \\*
-    #1 & #6 in #5 \\
-  \fi
+  \IfValueTF{#2}{#2}{\if@zh现在\else present\fi} 
+  % \if@zh
+  %   & \textbf{#3} \textbullet #4 \\*
+  %   #1 & #5 \textbullet #6 \\
+  % \else
+  %   & #4, \textbf{#3} \\*
+  %   #1 & #6 in #5 \\
+  % \fi
+  & \if@zh\textbf{#3} \textbullet #4\else #4, \textbf{#3}\fi \\*
+  #1 & \if@zh #5 \textbullet #6\else #6 in #5\fi \\
 }
 
 %%
