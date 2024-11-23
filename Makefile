@@ -37,3 +37,6 @@ cleanall:
 	done
 
 .PHONY: all en zh dist clean cleanall
+
+docker:
+	docker run -it --rm -v .:/pwd -w /pwd liweitianux-latex-env:resume bash -c 'make clean && make'
