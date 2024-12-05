@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2024/12/05 v2.5.9 Resume Class]
+\ProvidesClass{resume}[2024/12/05 v2.5.10 Resume Class]
 \LoadClass{article}
 
 %%
@@ -259,12 +259,28 @@
 % File information
 \newcommand*{\fileinfo}[1]{\def\@fileinfo{#1}}
 
+% Width of the profile
+\newlength{\profilewidth}
+% Delay the \setlength so the \linewidth becomes available.
+\AtBeginDocument{%
+  \setlength{\profilewidth}{\linewidth}
+}
+
 % Photo: \photo[<shape>]{<width>}{<filename>}
 % Two shapes are supported: circular (default), square
 \NewDocumentCommand{\photo}{O{circular}mm}{
-  \def\@photoshape{#1}
-  \def\@photowidth{#2}
-  \def\@photofile{#3}
+  \setlength{\profilewidth}{\dimexpr \linewidth - #2 - 2em}
+  \def\@photo{%
+    \begin{minipage}{#2}
+      \ifthenelse{\equal{#1}{square}}{%
+        \tikz\path[fill overzoom image={#3}]
+          rectangle (\linewidth, \linewidth);
+      }{%
+        \tikz\path[fill overzoom image={#3}]
+          circle[radius=0.5\linewidth];
+      }
+    \end{minipage}%
+  }
 }
 
 % Address
@@ -306,23 +322,8 @@
 
 % Render resume header
 \newcommand*{\makeheader}{
-  \ifdef{\@photowidth}{
-    \begin{minipage}{\@photowidth}
-      \ifthenelse{\equal{\@photoshape}{square}}{%
-        \tikz\path[fill overzoom image={\@photofile}]
-          rectangle (\linewidth, \linewidth);
-      }{%
-        \tikz\path[fill overzoom image={\@photofile}]
-          circle[radius=0.5\linewidth];
-      }
-    \end{minipage}
-    \hspace{1em}
-  }{}
-  \ifundef{\@photowidth}{%
-    \begin{minipage}{\linewidth}
-  }{%
-    \begin{minipage}{\dimexpr\linewidth-\@photowidth-2em}
-  }
+  \ifdef{\@photo}{\@photo\hspace{1em}}{}%
+  \begin{minipage}{\profilewidth}
     {\LARGE\bfseries\color{accentcolor} \@name}
     \ifdef{\@tagline}{%
       \medskip \\
