@@ -45,7 +45,7 @@
 \RequirePackage{multirow}
 \RequirePackage{makecell}  % multirowcell
 \RequirePackage{longtable}
-\RequirePackage[usenames,dvipsnames]{xcolor}
+\RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{tikz}
 \RequirePackage[skins]{tcolorbox}  % required by tikz to make the header
 \RequirePackage{csquotes}
