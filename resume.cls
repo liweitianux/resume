@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2024/12/05 v2.5.8 Resume Class]
+\ProvidesClass{resume}[2024/12/05 v2.5.9 Resume Class]
 \LoadClass{article}
 
 %%
@@ -63,15 +63,9 @@
 \AtBeginDocument{%
   \hypersetup{%
     pdfborder={0 0 0},% No border around links
-    pdfauthor={%
-      \ifdef{\@zh}%
-        {\@lastname\@firstname}%
-        {\@firstname{} \@lastname}%
-    },%
+    pdfauthor={\@name},%
     pdftitle={%
-      \ifdef{\@zh}%
-        {简历 | \@lastname\@firstname{}}%
-        {Resume | \@firstname{} \@lastname{}}%
+      \ifdef{\@zh}{简历 | \@name}{Resume | \@name}%
       \ifdef{\@tagline}{ | \@tagline}{}%
     },%
     pdfkeywords={\ifdef{\@keywords}{\@keywords}{}},%
@@ -249,7 +243,15 @@
 }
 
 % Name: \name{<firstname>}{<lastname>}
-\newcommand*{\name}[2]{\def\@firstname{#1}\def\@lastname{#2}}
+\newcommand*{\name}[2]{
+  \def\@firstname{#1}
+  \def\@lastname{#2}
+  \def\@name{%
+    \ifdef{\@zh}%
+      {\@lastname\@firstname}%
+      {\textsc{\@firstname} \@lastname}%
+  }
+}
 % Tag line
 \newcommand*{\tagline}[1]{\def\@tagline{#1}}
 % Keywords
@@ -299,14 +301,6 @@
   \iconlink{\mailSymbol}{mailto:#1}{\texttt{#1}}
 }
 
-% Render the name: \user{<firstanme>}{<lastname>}
-\newcommand*{\user}[2]{%
-  \textcolor{accentcolor}{%
-    \ifdef{\@zh}%
-      {{\LARGE\bfseries #2#1}}%
-      {{\LARGE\bfseries #1 \textsc{#2}}}%
-}}
-
 % Define the profile to show in the header
 \newcommand*{\profile}[1]{\def\@profile{#1}}
 
@@ -329,7 +323,7 @@
   }{%
     \begin{minipage}{\dimexpr\linewidth-\@photowidth-2em}
   }
-    \user{\@firstname}{\@lastname}
+    {\LARGE\bfseries\color{accentcolor} \@name}
     \ifdef{\@tagline}{%
       \medskip \\
       {\large \@tagline}
