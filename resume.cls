@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2024/12/05 v2.5.7 Resume Class]
+\ProvidesClass{resume}[2024/12/05 v2.5.8 Resume Class]
 \LoadClass{article}
 
 %%
@@ -49,6 +49,7 @@
 \RequirePackage{tikz}
 \RequirePackage[skins]{tcolorbox}  % required by tikz to make the header
 \RequirePackage{csquotes}
+\RequirePackage{relsize}  % relatively scale the icons
 \ifdef{\@zh}{
   \RequirePackage{xeCJK}
 }{}
@@ -184,13 +185,15 @@
 
 \newcommand*{\link}[2]{\textcolor{linkcolor}{\href{#1}{#2}}}
 
-% Enlarge the icon size.
-% Use "\iconsize{\normalsize}" to make icon the same size as text.
-\def\@iconsize{\Large}
-\newcommand*{\iconsize}[1]{\def\@iconsize{#1}}
+% The scale step for icons.
+% A positive step to enlarge icons, and a negative step to reduce them.
+\def\@iconscale{1}
+\newcommand*{\iconscale}[1]{\def\@iconscale{#1}}
 
-\newcommand*{\icon}[1]{%
-  {\@iconsize\makebox[1em][c]{\textcolor{symbolcolor}{#1}}}%
+% Icon: \icon[size]{\faICON}
+\NewDocumentCommand{\icon}{om}{
+  {\IfValueTF{#1}{#1}{\relsize{\@iconscale}}%
+   \makebox[1em][c]{\textcolor{symbolcolor}{#2}}}%
   \hspace{0.2em}\strut%
 }
 
