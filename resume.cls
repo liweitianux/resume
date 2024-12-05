@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2024/12/05 v2.5.6 Resume Class]
+\ProvidesClass{resume}[2024/12/05 v2.5.7 Resume Class]
 \LoadClass{article}
 
 %%
@@ -301,10 +301,6 @@
   \iconlink{\mailSymbol}{mailto:#1}{\texttt{#1}}
 }
 
-% Render the tagline
-\newcommand*{\resumetitle}[1]{%
-  \textcolor{accentcolor}{\textbf{\large{#1}}}
-}
 % Render the name: \user{<firstanme>}{<lastname>}
 \newcommand*{\user}[2]{%
   \textcolor{accentcolor}{%
@@ -338,7 +334,7 @@
     \user{\@firstname}{\@lastname}
     \ifdef{\@tagline}{%
       \medskip \\
-      \resumetitle{\@tagline}
+      {\large \@tagline}
     }{}
     \medskip \\
     \@profile
