@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2024/12/05 v2.5.10 Resume Class]
+\ProvidesClass{resume}[2024/12/05 v2.5.11 Resume Class]
 \LoadClass{article}
 
 %%
@@ -315,8 +315,13 @@
 
 % Render resume header
 \newcommand*{\makeheader}{
+  \ifdef{\@photo@width}{
+    \def\@profile@width{\dimexpr \linewidth - \@photo@width - 1em}%
+  }{
+    \def\@profile@width{\linewidth}
+  }%
   \ifdef{\@photo}{\@photo\hspace{1em}}{}%
-  \begin{minipage}{\dimexpr \linewidth - \@photo@width - 1em}
+  \begin{minipage}{\@profile@width}
     {\LARGE\bfseries\color{accentcolor} \@name}
     \ifdef{\@tagline}{%
       \medskip \\
