@@ -259,19 +259,12 @@
 % File information
 \newcommand*{\fileinfo}[1]{\def\@fileinfo{#1}}
 
-% Width of the profile
-\newlength{\profilewidth}
-% Delay the \setlength so the \linewidth becomes available.
-\AtBeginDocument{%
-  \setlength{\profilewidth}{\linewidth}
-}
-
 % Photo: \photo[<shape>]{<width>}{<filename>}
 % Two shapes are supported: circular (default), square
 \NewDocumentCommand{\photo}{O{circular}mm}{
-  \setlength{\profilewidth}{\dimexpr \linewidth - #2 - 2em}
+  \def\@photo@width{#2}
   \def\@photo{%
-    \begin{minipage}{#2}
+    \begin{minipage}{\@photo@width}
       \ifthenelse{\equal{#1}{square}}{%
         \tikz\path[fill overzoom image={#3}]
           rectangle (\linewidth, \linewidth);%
@@ -323,7 +316,7 @@
 % Render resume header
 \newcommand*{\makeheader}{
   \ifdef{\@photo}{\@photo\hspace{1em}}{}%
-  \begin{minipage}{\profilewidth}
+  \begin{minipage}{\dimexpr \linewidth - \@photo@width - 1em}
     {\LARGE\bfseries\color{accentcolor} \@name}
     \ifdef{\@tagline}{%
       \medskip \\
