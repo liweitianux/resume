@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2024/12/05 v2.5.4 Resume Class]
+\ProvidesClass{resume}[2024/12/05 v2.5.5 Resume Class]
 \LoadClass{article}
 
 %%
@@ -64,14 +64,14 @@
     pdfborder={0 0 0},% No border around links
     pdfauthor={%
       \ifdef{\@zh}{%
-        \@lastname{} \@firstname%
+        \@lastname\@firstname%
       }{%
         \@firstname{} \@lastname%
       }%
     },%
     pdftitle={%
       \ifdef{\@zh}{%
-        简历 | \@lastname{} \@firstname{}
+        简历 | \@lastname\@firstname{}
         \ifdef{\@tagline}{| \@tagline}{}%
       }{%
         Resume | \@firstname{} \@lastname{}
@@ -309,7 +309,7 @@
 \newcommand*{\user}[2]{%
   \color{accentcolor}{%
     \ifdef{\@zh}%
-      {{\LARGE\bfseries #2 #1}}%
+      {{\LARGE\bfseries #2#1}}%
       {{\LARGE\bfseries #1 \textsc{#2}}}%
 }}
 
