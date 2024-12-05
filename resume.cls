@@ -175,12 +175,12 @@
 %%
 
 \newcommand*{\creativecommons}[2]{%
-  \href{http://creativecommons.org/licenses/#1/#2/}%
+  \href{https://creativecommons.org/licenses/#1/#2/}%
     {\faCreativeCommons{} \uppercase{#1} #2}%
 }
 
 \newcommand*{\githublink}[2]{%
-  \href{http://github.com/#1/#2}{\githubSymbol{} #1/#2}%
+  \href{https://github.com/#1/#2}{\githubSymbol{} #1/#2}%
 }
 
 \newcommand*{\link}[2]{\textcolor{linkcolor}{\href{#1}{#2}}}
@@ -290,7 +290,7 @@
 % LinkedIn: \linkedin{<username>}
 \newcommand*{\linkedin}[1]{%
   \iconlink{\linkedinSymbol}%
-    {http://www.linkedin.com/in/#1}%
+    {https://www.linkedin.com/in/#1}%
     {linkedin.com/in/#1}%
 }
 % GitHub: \github{<username>}
