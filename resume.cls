@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2024/03/13 v2.5.3 Resume Class]
+\ProvidesClass{resume}[2024/12/05 v2.5.4 Resume Class]
 \LoadClass{article}
 
 %%
@@ -184,7 +184,9 @@
 
 \newcommand*{\link}[2]{\textcolor{linkcolor}{\href{#1}{#2}}}
 
-\def\@iconsize{\normalsize}
+% Enlarge the icon size.
+% Use "\iconsize{\normalsize}" to make icon the same size as text.
+\def\@iconsize{\Large}
 \newcommand*{\iconsize}[1]{\def\@iconsize{#1}}
 
 \newcommand*{\icon}[1]{%
