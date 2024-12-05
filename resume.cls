@@ -64,20 +64,15 @@
   \hypersetup{%
     pdfborder={0 0 0},% No border around links
     pdfauthor={%
-      \ifdef{\@zh}{%
-        \@lastname\@firstname%
-      }{%
-        \@firstname{} \@lastname%
-      }%
+      \ifdef{\@zh}%
+        {\@lastname\@firstname}%
+        {\@firstname{} \@lastname}%
     },%
     pdftitle={%
-      \ifdef{\@zh}{%
-        简历 | \@lastname\@firstname{}
-        \ifdef{\@tagline}{| \@tagline}{}%
-      }{%
-        Resume | \@firstname{} \@lastname{}
-        \ifdef{\@tagline}{| \@tagline}{}%
-      }%
+      \ifdef{\@zh}%
+        {简历 | \@lastname\@firstname{}}%
+        {Resume | \@firstname{} \@lastname{}}%
+      \ifdef{\@tagline}{ | \@tagline}{}%
     },%
     pdfkeywords={\ifdef{\@keywords}{\@keywords}{}},%
   }%
