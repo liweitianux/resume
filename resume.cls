@@ -274,12 +274,12 @@
     \begin{minipage}{#2}
       \ifthenelse{\equal{#1}{square}}{%
         \tikz\path[fill overzoom image={#3}]
-          rectangle (\linewidth, \linewidth);
+          rectangle (\linewidth, \linewidth);%
       }{%
         \tikz\path[fill overzoom image={#3}]
-          circle[radius=0.5\linewidth];
-      }
-    \end{minipage}%
+          circle[radius=0.5\linewidth];%
+      }%
+    \end{minipage}
   }
 }
 
