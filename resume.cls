@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2024/12/05 v2.5.5 Resume Class]
+\ProvidesClass{resume}[2024/12/05 v2.5.6 Resume Class]
 \LoadClass{article}
 
 %%
@@ -303,11 +303,11 @@
 
 % Render the tagline
 \newcommand*{\resumetitle}[1]{%
-  \color{accentcolor}{\textbf{\large{#1}}}
+  \textcolor{accentcolor}{\textbf{\large{#1}}}
 }
 % Render the name: \user{<firstanme>}{<lastname>}
 \newcommand*{\user}[2]{%
-  \color{accentcolor}{%
+  \textcolor{accentcolor}{%
     \ifdef{\@zh}%
       {{\LARGE\bfseries #2#1}}%
       {{\LARGE\bfseries #1 \textsc{#2}}}%
