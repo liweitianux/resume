@@ -34,7 +34,6 @@
 ]{geometry}
 \RequirePackage{xparse}
 \RequirePackage{etoolbox}
-\RequirePackage{ifthen}
 \RequirePackage{fontspec}
 \RequirePackage{fontawesome5}
 \RequirePackage{parskip}  % auto adjust parskip and items skip
@@ -50,6 +49,7 @@
 \RequirePackage[skins]{tcolorbox}  % required by tikz to make the header
 \RequirePackage{csquotes}
 \RequirePackage{relsize}  % relatively scale the icons
+\RequirePackage{keyval}  % key=value style parameters
 \ifdef{\@zh}{
   \RequirePackage{xeCJK}
 }{}
@@ -259,13 +259,22 @@
 % File information
 \newcommand*{\fileinfo}[1]{\def\@fileinfo{#1}}
 
-% Photo: \photo[<shape>]{<width>}{<filename>}
-% Two shapes are supported: circular (default), square
-\NewDocumentCommand{\photo}{O{circular}mm}{
+% Photo:
+% \photo[
+%   shape=<circular|square>,    % default is circular
+%   position=<left|right>,      % default is left
+% ]{<width>}{<filename>}
+\define@key{photo}{shape}{\def\@photo@shape{#1}}
+\define@key{photo}{position}{\def\@photo@position{#1}}
+\NewDocumentCommand{\photo}{
+  O{shape=circular, position=left}
+  m m
+}{
+  \setkeys{photo}{#1}
   \def\@photo@width{#2}
   \def\@photo{%
     \begin{minipage}{\@photo@width}
-      \ifthenelse{\equal{#1}{square}}{%
+      \ifdefstring{\@photo@shape}{square}{%
         \tikz\path[fill overzoom image={#3}]
           rectangle (\linewidth, \linewidth);%
       }{%
@@ -320,7 +329,9 @@
   }{
     \def\@profile@width{\linewidth}
   }%
-  \ifdef{\@photo}{\@photo\hspace{1em}}{}%
+  \ifdefstring{\@photo@position}{left}{%
+    \@photo\hspace{1em}%
+  }{}%
   \begin{minipage}{\@profile@width}
     {\LARGE\bfseries\color{accentcolor} \@name}
     \ifdef{\@tagline}{%
@@ -330,6 +341,8 @@
     \medskip \\
     \@profile
   \end{minipage}
+  % photo on the right side
+  \ifdefstring{\@photo@position}{left}{}{\hfill\@photo}
 }
 
 %%
