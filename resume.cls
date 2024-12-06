@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2024/12/06 v2.6.0 Resume Class]
+\ProvidesClass{resume}[2024/12/06 v2.6.1 Resume Class]
 \LoadClass{article}
 
 %%
@@ -344,6 +344,22 @@
     % photo on the right side
     \ifdefstring{\@photo@position}{left}{}{\hfill\@photo}% (suppress blank)
   }{}
+}
+
+%%
+%% Abstract
+%%
+
+\RenewDocumentEnvironment{abstract}{}{
+  \phantomsection
+  \addcontentsline{toc}{section}{\ifdef{\@zh}{摘要}{Abstract}}
+  \ifdef{\@zh}{%
+    \onehalfspacing\hspace{2em}%
+    \ignorespaces% remove the beginning glue to make the indentation correct
+  }{}%
+}{%
+  \par
+  \medskip
 }
 
 %%
