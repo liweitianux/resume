@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2024/12/06 v2.6.1 Resume Class]
+\ProvidesClass{resume}[2024/12/06 v2.6.2 Resume Class]
 \LoadClass{article}
 
 %%
@@ -325,9 +325,7 @@
 \newcommand*{\makeheader}{
   \ifdef{\@photo}{%
     \def\@profile@width{\dimexpr \linewidth - \@photo@width - 1em}
-    \ifdefstring{\@photo@position}{left}{%
-      \@photo\hspace{1em}%
-    }{}%
+    \ifdefstring{\@photo@position}{right}{}{\@photo\hspace{1em}}%
   }{%
     \def\@profile@width{\linewidth}
   }%
@@ -342,7 +340,7 @@
   \end{minipage}
   \ifdef{\@photo}{%
     % photo on the right side
-    \ifdefstring{\@photo@position}{left}{}{\hfill\@photo}% (suppress blank)
+    \ifdefstring{\@photo@position}{right}{\hfill\@photo}{}% (suppress blank)
   }{}
 }
 
