@@ -352,8 +352,11 @@
   \phantomsection
   \addcontentsline{toc}{section}{\ifdef{\@zh}{摘要}{Abstract}}
   \ifdef{\@zh}{%
-    \onehalfspacing\hspace{2em}%
-    \ignorespaces% remove the beginning glue to make the indentation correct
+    % Use "\ignorespaces" to remove the beginning space, which becomes a
+    % glue between western and CJK characters, to make the indentation
+    % correct.
+    % Credit: https://tex.stackexchange.com/a/331456
+    \onehalfspacing\hspace{2em}\ignorespaces
   }{}%
 }{%
   \par
