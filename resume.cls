@@ -30,7 +30,7 @@
 \RequirePackage[%
   a4paper,%
   margin=1.5cm,%
-  includefoot,
+  includefoot,%
 ]{geometry}
 \RequirePackage{xparse}
 \RequirePackage{etoolbox}
@@ -105,12 +105,11 @@
 \newcommand*{\universitySymbol}{\faUniversity}
 
 % Color setup
-\ifdef{\@monochrome}%
-  {\definecolor{basecolor}{HTML}{000000}}%
-  {\definecolor{basecolor}{HTML}{000066}}  % blue
-%
-\definecolor{darkGrey}{HTML}{989898}
-%
+\ifdef{\@monochrome}{
+  \definecolor{basecolor}{HTML}{000000}  % black
+}{
+  \definecolor{basecolor}{HTML}{000066}  % blue
+}
 \colorlet{linkcolor}{basecolor}
 \colorlet{accentcolor}{linkcolor!90}
 \colorlet{symbolcolor}{linkcolor!85}
