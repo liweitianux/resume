@@ -324,14 +324,14 @@
 
 % Render resume header
 \newcommand*{\makeheader}{
-  \ifdef{\@photo@width}{
-    \def\@profile@width{\dimexpr \linewidth - \@photo@width - 1em}%
-  }{
+  \ifdef{\@photo}{%
+    \def\@profile@width{\dimexpr \linewidth - \@photo@width - 1em}
+    \ifdefstring{\@photo@position}{left}{%
+      \@photo\hspace{1em}%
+    }{}%
+  }{%
     \def\@profile@width{\linewidth}
   }%
-  \ifdefstring{\@photo@position}{left}{%
-    \@photo\hspace{1em}%
-  }{}%
   \begin{minipage}{\@profile@width}
     {\LARGE\bfseries\color{accentcolor} \@name}
     \ifdef{\@tagline}{%
@@ -341,8 +341,10 @@
     \medskip \\
     \@profile
   \end{minipage}
-  % photo on the right side
-  \ifdefstring{\@photo@position}{left}{}{\hfill\@photo}
+  \ifdef{\@photo}{%
+    % photo on the right side
+    \ifdefstring{\@photo@position}{left}{}{\hfill\@photo}
+  }{}
 }
 
 %%
