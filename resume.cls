@@ -1,5 +1,5 @@
 %%
-%% Copyright (c) 2018-2023 Weitian LI
+%% Copyright (c) 2018-2024 Weitian LI
 %% Copyright (c) 2016 Christophe Roger
 %% The LaTeX Project Public License (LPPL) Version 1.3c
 %%
@@ -12,7 +12,7 @@
 %%     https://www.latextemplates.com/template/plasmati-graduate-cv
 %%
 
-\ProvidesClass{resume}[2024/12/05 v2.5.11 Resume Class]
+\ProvidesClass{resume}[2024/12/06 v2.6.0 Resume Class]
 \LoadClass{article}
 
 %%
