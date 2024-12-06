@@ -18,6 +18,13 @@ Welcome to try it and report back.
 
 Usage
 -----
+
+* Docker
+
+  1. Clone this respository.
+  2. Build image: `docker build -t liweitianux-latex-env:resume .`
+  3. Run command: `make docker`
+
 * Linux
 
   1. Install XeLaTeX, latexmk, GNU Make, and GhostScript packages;
