@@ -276,12 +276,12 @@
     \begin{minipage}{\@photo@width}
       \ifdefstring{\@photo@shape}{square}{%
         \tikz\path[fill overzoom image={#3}]
-          rectangle (\linewidth, \linewidth);%
+          rectangle (\linewidth, \linewidth);% (suppress blank)
       }{%
         \tikz\path[fill overzoom image={#3}]
-          circle[radius=0.5\linewidth];%
+          circle[radius=0.5\linewidth];% (suppress blank)
       }%
-    \end{minipage}
+    \end{minipage}% (suppress blank)
   }
 }
 
@@ -343,7 +343,7 @@
   \end{minipage}
   \ifdef{\@photo}{%
     % photo on the right side
-    \ifdefstring{\@photo@position}{left}{}{\hfill\@photo}
+    \ifdefstring{\@photo@position}{left}{}{\hfill\@photo}% (suppress blank)
   }{}
 }
 
