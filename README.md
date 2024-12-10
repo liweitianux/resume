@@ -34,6 +34,10 @@ Usage
      and confirm the prompts to install the missing packages along
      the run.
 
+* Docker or Podman
+
+  Just run `make docker` or `make podman`.
+
 Font Awesome 5
 --------------
 **NOTE**:
