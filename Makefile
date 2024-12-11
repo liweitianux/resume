@@ -45,7 +45,7 @@ DOCKER_CHOWN:=	chown -R $(shell id -u):$(shell id -g) .
 # build the resume within an docker container
 docker:
 	$(DOCKER_CLI) image inspect -f 'ok' $(DOCKER_IMAGE) 2>/dev/null || \
-	$(DOCKER_CLI) build --tag $(DOCKER_IMAGE) -f Dockerfile
+	$(DOCKER_CLI) build --tag $(DOCKER_IMAGE) -f Dockerfile .
 	$(DOCKER_CLI) run --rm --volume $(PWD):/build $(DOCKER_IMAGE) \
 		sh -c "cd /build && make clean && make && $(DOCKER_CHOWN)"
 
