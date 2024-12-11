@@ -39,13 +39,19 @@ cleanall:
 .PHONY: all en zh dist clean cleanall
 
 DOCKER_CLI?=	sudo docker
-DOCKER_IMAGE:=	resume:builder
+DOCKER_IMAGE:=	resume:test
 DOCKER_CHOWN:=	chown -R $(shell id -u):$(shell id -g) .
 
 # build the resume within an docker container
 docker:
 	$(DOCKER_CLI) image inspect -f 'ok' $(DOCKER_IMAGE) 2>/dev/null || \
-	$(DOCKER_CLI) build --tag $(DOCKER_IMAGE) -f Dockerfile .
+	{ \
+		rm -rf _empty && \
+		mkdir _empty && \
+		$(DOCKER_CLI) build --tag $(DOCKER_IMAGE) \
+			-f Dockerfile _empty && \
+		rmdir _empty; \
+	}
 	$(DOCKER_CLI) run --rm --volume $(PWD):/build $(DOCKER_IMAGE) \
 		sh -c "cd /build && make clean && make && $(DOCKER_CHOWN)"
 
