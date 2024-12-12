@@ -3,10 +3,10 @@ My Resume and LaTeX Template
 
 Introduction
 ------------
-This repository holds my [resume](resume-zh+en.pdf) (Chinese and English),
-the [resume LaTeX template](resume.cls).
+This repository holds my [resume](resume-zh+en.pdf) (Chinese and English) and
+the [LaTeX template](resume.cls).
 
-This template is based on the
+The LaTeX template is based on the
 [YACC: Another Awesome CV](https://github.com/darwiin/yaac-another-awesome-cv)
 by Christophe Roger, which is further based on the
 [Plasmati Graduate CV](https://www.latextemplates.com/template/plasmati-graduate-cv)
@@ -120,7 +120,7 @@ On Debian Linux, simply do `apt install fonts-ibm-plex fonts-noto-cjk`.
 
 Of course, you can use the fonts you prefer by modifying the template directly.
 However, you may need to tweak the
-[column width in the template](resume.cls#L158)
+[column width `\leftcolwidth` in the template](resume.cls)
 accordingly.
 
 Fonts Installation
