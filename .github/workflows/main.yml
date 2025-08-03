@@ -27,7 +27,6 @@ jobs:
       # the shipped texlive is 2021 and is older than the remote (currently 2023),
       # so need to manually download the package and install it.
       run: |
-        sudo apt-get install -y --no-install-recommends wget xz-utils
         wget --no-check-certificate https://mirror.ctan.org/systems/texlive/tlnet/archive/fontawesome5.tar.xz
         tlmgr --usermode init-usertree
         tlmgr --usermode install --file fontawesome5.tar.xz
