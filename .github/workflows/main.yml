@@ -9,7 +9,7 @@ on:
     - master
 
 jobs:
-  ubuntu-24.04:
+  ubuntu_24_04:
     # see https://github.com/actions/runner-images
     runs-on: ubuntu-24.04
     steps:
@@ -37,7 +37,7 @@ jobs:
     - name: build pdfs
       run: make
 
-  ubuntu-22.04:
+  ubuntu_22_04:
     # see https://github.com/actions/runner-images
     runs-on: ubuntu-22.04
     steps:
