@@ -7,8 +7,37 @@ on:
   push:
     branches:
     - master
+
 jobs:
-  all:
+  ubuntu-24.04:
+    # see https://github.com/actions/runner-images
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v4
+    - name: install deps
+      # texlive-lang-cjk -> xeCJK.sty
+      # texlive-lang-chinese -> ctexhook.sty
+      # texlive-fonts-recommended -> pzdr.tfm (required by mktextfm pzdr)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends make ghostscript
+        sudo apt-get install -y --no-install-recommends latexmk texlive-xetex
+        sudo apt-get install -y --no-install-recommends texlive-lang-cjk texlive-lang-chinese
+        sudo apt-get install -y --no-install-recommends fonts-ibm-plex fonts-noto-cjk texlive-fonts-recommended
+    - name: install fontawesome5
+      # Manually download the package and install it because the remote archive
+      # is newer (currently 2025 vs 2023).
+      # NOTE: "tlmgr install" would warn about "check_file_and_remove: neither
+      # checksum nor checksize available for ..." and may exit with an error,
+      # although the package is correctly installed.  So ignore the error exit.
+      run: |
+        wget https://mirror.ctan.org/systems/texlive/tlnet/archive/fontawesome5.tar.xz
+        tlmgr --usermode init-usertree
+        tlmgr --usermode install --file fontawesome5.tar.xz || true
+    - name: build pdfs
+      run: make
+
+  ubuntu-22.04:
     # see https://github.com/actions/runner-images
     runs-on: ubuntu-22.04
     steps:
