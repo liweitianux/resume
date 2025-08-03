@@ -9,7 +9,8 @@ on:
     - master
 jobs:
   all:
-    runs-on: ubuntu-latest
+    # see https://github.com/actions/runner-images
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
     - name: install deps
